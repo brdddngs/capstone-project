@@ -1,201 +1,200 @@
 [
   {
     "title": "Bohnen-Hummus mit Auberginen & Pinienkernen",
-    "steps": "Backofen auf 200°C vorzeizen. Auberginen waschen, grob würfeln und auf ein mit Backpapier belegtes Blech geben. Olivenöl, Paprikapulver, Piment, Salz und Pfeffer drüber geben und gut mischen. Ca. 20 Min. backen. In der Zwischenzeit das Hummus zubereiten: Knoblauch schälen und fein würfeln. Zitrone halbieren und Saft auspressen. Weiße Bohnen, Olivenöl, Knoblauch und Zitronensaft in einen Mixer geben und fein pürieren. Mit Salz, Pfeffer, Kreuzkümmel und Cayennepfeffer würzen und noch mal pürieren. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Petersilie waschen, trocken schütteln und hacken. Die fertig gebackenen Auberginen mit der Petersilie vermengen und mit dem Bohnenhummus und Pinienkernen servieren.",
+    "steps": "Backofen auf 200°C vorheizen. Auberginen waschen, grob würfeln und auf ein mit Backpapier belegtes Blech geben. Olivenöl, Paprikapulver, Piment, Salz und Pfeffer drüber geben und gut mischen. Ca. 20 Min. backen. In der Zwischenzeit das Hummus zubereiten: Knoblauch schälen und fein würfeln. Zitrone halbieren und Saft auspressen. Weiße Bohnen, Olivenöl, Knoblauch und Zitronensaft in einen Mixer geben und fein pürieren. Mit Salz, Pfeffer, Kreuzkümmel und Cayennepfeffer würzen und noch mal pürieren. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Petersilie waschen, trocken schütteln und hacken. Die fertig gebackenen Auberginen mit der Petersilie vermengen und mit dem Bohnenhummus und Pinienkernen servieren.",
     "ingredients": [
       {
-        "food": "weiße Bohnen (Dose od. Glas)",
+        "ingredientItem": "weiße Bohnen (Dose od. Glas)",
         "amount": "300",
         "unit": "g"
       },
       {
-        "food": "Zitrone",
+        "ingredientItem": "Zitrone",
         "amount": "0,5",
         "unit": "Stk"
       },
       {
-        "food": "Aubergine",
+        "ingredientItem": "Aubergine",
         "amount": "1",
         "unit": "Stk"
       },
       {
-        "food": "Pinienkerne",
+        "ingredientItem": "Pinienkerne",
         "amount": "30",
         "unit": "g"
       },
       {
-        "food": "Petersilie, n.B.",
+        "ingredientItem": "Petersilie, n.B.",
         "amount": "",
         "unit": ""
       },
       {
-        "food": "Pinienkerne",
+        "ingredientItem": "Pinienkerne",
         "amount": "30",
         "unit": "g"
       },
       {
-        "food": "Olivenöl",
+        "ingredientItem": "Olivenöl",
         "amount": "6",
         "unit": "EL"
       },
       {
-        "food": "Knoblauch",
+        "ingredientItem": "Knoblauch",
         "amount": "0,5",
         "unit": "Zehen"
       },
       {
-        "food": "Kreuzkümmel",
+        "ingredientItem": "Kreuzkümmel",
         "amount": "0,5",
         "unit": "TL"
       },
       {
-        "food": "Cayennepfeffer",
+        "ingredientItem": "Cayennepfeffer",
         "amount": "0,5",
         "unit": "TL"
       },
       {
-        "food": "Paprikapulver",
+        "ingredientItem": "Paprikapulver",
         "amount": "1",
         "unit": "TL"
       },
       {
-        "food": "Piment",
+        "ingredientItem": "Piment",
         "amount": "1",
         "unit": "TL"
       },
       {
-        "food": "Salz",
+        "ingredientItem": "Salz",
         "amount": "30",
         "unit": "g"
       },
       {
-        "food": "Pfeffer"
+        "ingredientItem": "Pfeffer"
       },
       {
-        "food": "Pinienkerne"
+        "ingredientItem": "Pinienkerne"
       }
     ]
   },
   {
     "title": "Khachapuri",
     "steps": "Backofen auf 200°C vorheizen. Mozzarella reiben. Ricotta, Mozzarella und zerkrümelten Feta vermengen. Mit Salz und Pfeffer abschmecken und zur Seite stellen. Den Teig zu einem Kreis mit einem Durchmesser von ca. 20 cm ausrollen. Die gegenüberliegenden Seiten zur Mitte einrollen, sodass ein \"Boot\" entsteht. Danach die Enden zusammen drücken. Khachapuri mit Käsemischung füllen. Ei mit etwas Wasser verquirlen und damit den Teig bepinseln. Khachapuri ca. 15 Min. backen, bis der Teig gold-braun wird. In die Mitte jedes Khachapuri eine Mulde drücken und ein Ei hineingeben. Butter in Stücke darauf verteilen und Khachapuri weitere 5-6 Min. backen. Nach Wunsch mit Kräutern bestreuen und servieren",
+
     "ingredients": [
       {
-        "food": "Pizzateig",
+        "ingredientItem": "Pizzateig",
         "amount": "200",
         "unit": "g"
       },
       {
-        "food": "Mozzarella",
+        "ingredientItem": "Mozzarella",
         "amount": "60",
         "unit": "g"
       },
       {
-        "food": "Ricotta",
+        "ingredientItem": "Ricotta",
         "amount": "60",
         "unit": "g"
       },
       {
-        "food": "Feta",
+        "ingredientItem": "Feta",
         "amount": "60",
         "unit": "g"
       },
       {
-        "food": "Eier",
+        "ingredientItem": "Eier",
         "amount": "2"
       },
       {
-        "food": "Butter",
+        "ingredientItem": "Butter",
         "amount": "1",
         "unit": "TL"
       },
       {
-        "food": "Salz",
+        "ingredientItem": "Salz",
         "amount": "30",
         "unit": "g"
       },
       {
-        "food": "Pfeffer"
-      },
-      {
-        "food": "Pinienkerne"
+        "ingredientItem": "Pfeffer"
       }
     ]
   },
   {
     "title": "Kürbisrisotto mit Serrano Chips & Cashews",
     "steps": "Backofen auf 200°C vorzeizen. Kürbis entkernen und in kleine Würfel schneiden. Schalotten klein würfeln, Knoblauch fein hacken. In einem breiten Topf Zwiebeln und Knoblauch kurz in Olivenöl anschwitzen. Den Reis hinzugeben und ca. 3 Min. mitdünsten. Umrühren, so dass jedes Reiskorn von Öl umschlossen ist und glasig wird. Reis schnell mit Weißwein ablöschen und reduzieren lassen. In einer Pfanne die Kürbiswürfel mit Thymian und Muskat ca. 12. Min. anbraten. Serranoscheiben uns Cashews auf ein Backblech verteilen und für ca. 10 Min. in den Ofen schieben. Der Serrano soll trocken und knusprig werden, die Cashews leicht braun. Sobald der Weißwein verdunstet ist, nach und nach mit Gemüsebrühe aufgießen und immer wieder reduzieren lassen. Ständig rühren! Mit Salz und Pfeffer abschmecken. Sobald die Kürbiswürfel in der Pfanne gar aber bissfest sind, beiseite stellen. Wenn der Reis gar ist und die Konsistenz allmählich erreicht ist, die Butter in Würfeln, den Kürbis, die Cashews und Parmesan hinzufügen und vermengen. Warm servieren, mit Kürbisöl beträufeln und schlemmern.",
+
     "ingredients": [
       {
-        "food": "Hokkaido",
+        "ingredientItem": "Hokkaido",
         "amount": "1",
         "unit": "Stk."
       },
       {
-        "food": "Risottoreis",
+        "ingredientItem": "Risottoreis",
         "amount": "200",
         "unit": "g"
       },
       {
-        "food": "Parmesan",
+        "ingredientItem": "Parmesan",
         "amount": "40",
         "unit": "g"
       },
       {
-        "food": "Serrano Schinken",
+        "ingredientItem": "Serrano Schinken",
         "amount": "30",
         "unit": "g"
       },
       {
-        "food": "Cashews, ungesalzen",
+        "ingredientItem": "Cashews, ungesalzen",
         "amount": "40",
         "unit": "g"
       },
       {
-        "food": "Gemüsebrühe",
+        "ingredientItem": "Gemüsebrühe",
         "amount": "0,5",
         "unit": "l"
       },
       {
-        "food": "Weißwein",
+        "ingredientItem": "Weißwein",
         "amount": "100",
         "unit": "ml"
       },
       {
-        "food": "Thymian",
+        "ingredientItem": "Thymian",
         "amount": "4",
         "unit": "Stk"
       },
       {
-        "food": "Schalotte",
+        "ingredientItem": "Schalotte",
         "amount": "1"
       },
       {
-        "food": "Knoblauch",
+        "ingredientItem": "Knoblauch",
         "amount": "1",
         "unit": "Zehe"
       },
       {
-        "food": "Muskatnuss"
+        "ingredientItem": "Muskatnuss"
       },
       {
-        "food": "Salz"
+        "ingredientItem": "Salz"
       },
       {
-        "food": "Pfeffer"
+        "ingredientItem": "Pfeffer"
       },
       {
-        "food": "Butter",
+        "ingredientItem": "Butter",
         "amount": "30",
         "unit": "g"
       },
       {
-        "food": "Olivenöl",
+        "ingredientItem": "Olivenöl",
         "amount": "2",
         "unit": "EL"
       },
       {
-        "food": "Kürbisöl",
+        "ingredientItem": "Kürbisöl",
         "amount": "1",
         "unit": "TL"
       }
