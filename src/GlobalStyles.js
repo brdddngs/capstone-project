@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 16px;
   color: #313131;
 }
 
@@ -13,6 +13,9 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.root {
+  height: 100vh;
+}
 
 
 `
