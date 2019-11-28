@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import './styles.scss'
-import Recipe from './Recipe'
 import recipesData from './recipes.json'
 import Grid from './Grid'
 import Header from './Header'
 import Pagetitle from './Pagetitle'
+import RecipeTile from './RecipeTile'
 
 export default function App() {
   return (
@@ -15,17 +15,23 @@ export default function App() {
           <Pagetitle>Cookbook</Pagetitle>
           <img src={require('./assets/search.svg')} alt="search" />
         </Header>
-        <ContentContainer>
+        <TileContainer>
           {recipesData.map((recipe, index) => (
-            <Recipe key={index} {...recipe} />
+            <RecipeTile key={index} {...recipe} />
           ))}
-        </ContentContainer>
+        </TileContainer>
       </Grid>
     </>
   )
 }
 
-const ContentContainer = styled.section`
+const TileContainer = styled.section`
+  width: 100%;
+  position: absolute;
+  top: 56px;
   padding: 20px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 160px);
+  justify-content: center;
+  gap: 10px;
 `
