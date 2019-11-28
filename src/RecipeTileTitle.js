@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-const RecipeTileTitle = styled.h2`
+export default styled.h2`
   z-index: 1;
   position: absolute;
   bottom: 10px;
@@ -10,5 +10,3 @@ const RecipeTileTitle = styled.h2`
   font-weight: 400;
   color: #f2f2f2;
 `
-
-export default RecipeTileTitle

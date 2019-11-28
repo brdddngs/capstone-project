@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import RecipeTileTitle from './RecipeTileTitle'
-import RecipeTileImage from './RecipeTileImage'
 import RecipeTileGradient from './RecipeTileGradient'
 
 export default function RecipeTile({ title, image }) {
@@ -18,4 +17,7 @@ const RecipeTileStyled = styled.section`
   position: relative;
   min-width: 160px;
   max-height: 160px;
+`
+const RecipeTileImage = styled.img`
+  width: 100%;
 `
