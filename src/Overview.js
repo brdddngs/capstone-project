@@ -12,8 +12,8 @@ export default function Overview({ recipesData }) {
         <img src={require('./assets/search.svg')} alt="search" />
       </OverviewNav>
       <TileContainer>
-        {recipesData.map((recipe, index) => (
-          <RecipeTile key={index} {...recipe} />
+        {recipesData.map(recipe => (
+          <RecipeTile key={recipe.id} {...recipe} />
         ))}
       </TileContainer>
     </>
@@ -30,4 +30,5 @@ const TileContainer = styled.section`
   grid-template-rows: repeat(2, 160px);
   justify-content: center;
   gap: 10px;
+  background-color: #fff;
 `

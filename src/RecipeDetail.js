@@ -5,8 +5,8 @@ import RecipeDetailContent from './RecipeDetailContent'
 import RecipeDetailHeader from './RecipeDetailHeader'
 import RecipeDetailTitle from './RecipeDetailTitle'
 import RecipeDetailImg from './RecipeDetailImg'
-import TabContainer from './TabContainer'
-import Tab from './Tab'
+import TabContainer from './RecipeDetailTabContainer'
+import Tab from './RecipeDetailTab'
 
 export default function RecipeDetail({ title, steps, image, ingredients }) {
   const [showIngredients, setShowIngredients] = useState(true)

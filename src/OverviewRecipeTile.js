@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import RecipeTileTitle from './RecipeTileTitle'
-import RecipeTileGradient from './RecipeTileGradient'
+import RecipeTileTitle from './OverviewRecipeTileTitle'
+import RecipeTileGradient from './OverviewRecipeTileGradient'
 
 export default function RecipeTile({ title, image }) {
   return (

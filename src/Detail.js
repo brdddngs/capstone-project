@@ -25,4 +25,5 @@ export default function Detail({ title, steps, ingredients, image }) {
 }
 const Container = styled.section`
   width: 100%;
+  background-color: #fff;
 `

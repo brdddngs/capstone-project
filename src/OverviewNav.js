@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-export default styled.header`
+export default styled.nav`
   z-index: 2;
   position: fixed;
   display: flex;
