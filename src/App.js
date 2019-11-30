@@ -1,37 +1,20 @@
 import React from 'react'
-import styled from 'styled-components/macro'
-import './styles.scss'
 import recipesData from './recipes.json'
-import Grid from './Grid'
-import Header from './Header'
-import Pagetitle from './Pagetitle'
-import RecipeTile from './RecipeTile'
+import Detail from './Detail.js'
+import Overview from './Overview.js'
 
 export default function App() {
   return (
     <>
-      <Grid>
-        <Header>
-          <Pagetitle>Cookbook</Pagetitle>
-          <img src={require('./assets/search.svg')} alt="search" />
-        </Header>
-        <TileContainer>
-          {recipesData.map((recipe, index) => (
-            <RecipeTile key={index} {...recipe} />
-          ))}
-        </TileContainer>
-      </Grid>
+      <Overview recipesData={recipesData}></Overview>
+      {/*
+      <Detail
+        title={recipesData[0].title}
+        steps={recipesData[0].steps}
+        ingredients={recipesData[0].ingredients}
+        image={recipesData[0].image}
+      />  
+      */}
     </>
   )
 }
-
-const TileContainer = styled.section`
-  width: 100%;
-  position: absolute;
-  top: 56px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 160px);
-  justify-content: center;
-  gap: 10px;
-`
