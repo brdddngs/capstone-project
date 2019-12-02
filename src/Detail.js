@@ -3,13 +3,16 @@ import styled from 'styled-components/macro'
 import Grid from './Grid'
 import RecipeDetailNav from './RecipeDetailNav'
 import RecipeDetail from './RecipeDetail'
+import { Link } from 'react-router-dom'
 
 export default function Detail({ title, steps, ingredients, image }) {
   return (
     <>
       <Grid>
         <RecipeDetailNav>
-          <img src={require('./assets/arrow_back.svg')} alt="back" />
+          <Link to="/">
+            <img src={require('./assets/arrow_back.svg')} alt="back" />
+          </Link>
         </RecipeDetailNav>
         <Container>
           <RecipeDetail

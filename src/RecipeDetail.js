@@ -16,7 +16,7 @@ export default function RecipeDetail({ title, steps, image, ingredients }) {
     <>
       <RecipeDetailHeader>
         <RecipeDetailTitle>{title}</RecipeDetailTitle>
-        <RecipeDetailGradient></RecipeDetailGradient>
+        <RecipeDetailGradient />
         <RecipeDetailImg src={require(`./assets/img/${image}`)} alt={title} />
       </RecipeDetailHeader>
       <RecipeDetailContent>

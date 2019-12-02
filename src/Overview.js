@@ -1,19 +1,26 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import OverviewNav from './OverviewNav'
-import RecipeTile from './RecipeTile'
+import RecipeTile from './OverviewRecipeTile'
 import OverviewTitle from './OverviewTitle'
+import { Link } from 'react-router-dom'
 
-export default function Overview({ recipesData }) {
+export default function Overview({ recipesData, handleRecipeClick }) {
   return (
     <>
       <OverviewNav>
         <OverviewTitle>Cookbook</OverviewTitle>
-        <img src={require('./assets/search.svg')} alt="search" />
+        {/* <img src={require('./assets/search.svg')} alt="search" /> */}
       </OverviewNav>
       <TileContainer>
-        {recipesData.map(recipe => (
-          <RecipeTile key={recipe.id} {...recipe} />
+        {recipesData.map((recipe, index) => (
+          <Link
+            to={`/detail/${recipe.title}`}
+            key={recipe.id}
+            onClick={() => handleRecipeClick(index)}
+          >
+            <RecipeTile {...recipe} />
+          </Link>
         ))}
       </TileContainer>
     </>
