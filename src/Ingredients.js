@@ -4,10 +4,10 @@ import styled from 'styled-components/macro'
 export default function Ingredients({ amount, unit, ingredientItem }) {
   return (
     <IngredientsWrapper>
-      <p>
+      <Item>
         {amount} {unit}
-      </p>
-      <p>{ingredientItem}</p>
+      </Item>
+      <Item>{ingredientItem}</Item>
     </IngredientsWrapper>
   )
 }
@@ -15,4 +15,10 @@ export default function Ingredients({ amount, unit, ingredientItem }) {
 const IngredientsWrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 2fr;
+`
+const Item = styled.p`
+  margin: 3px 6px;
+  &:first-child {
+    text-align: right;
+  }
 `

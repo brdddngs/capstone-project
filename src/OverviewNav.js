@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-const Header = styled.header`
+export default styled.nav`
   z-index: 2;
   position: fixed;
   display: flex;
@@ -20,5 +20,3 @@ const Header = styled.header`
     left: 0;
   }
 `
-
-export default Header
