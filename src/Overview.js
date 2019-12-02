@@ -1,17 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import OverviewNav from './OverviewNav'
-import RecipeTile from './OverviewRecipeTile'
-import OverviewTitle from './OverviewTitle'
+import Nav from './OverviewNav'
+import Tile from './OverviewTile'
 import { Link } from 'react-router-dom'
 
 export default function Overview({ recipesData, handleRecipeClick }) {
   return (
     <>
-      <OverviewNav>
-        <OverviewTitle>Cookbook</OverviewTitle>
-        {/* <img src={require('./assets/search.svg')} alt="search" /> */}
-      </OverviewNav>
+      <Nav title="Cookbook" />
       <TileContainer>
         {recipesData.map((recipe, index) => (
           <Link
@@ -19,7 +15,7 @@ export default function Overview({ recipesData, handleRecipeClick }) {
             key={recipe.id}
             onClick={() => handleRecipeClick(index)}
           >
-            <RecipeTile {...recipe} />
+            <Tile {...recipe} />
           </Link>
         ))}
       </TileContainer>

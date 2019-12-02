@@ -3,16 +3,16 @@ import styled from 'styled-components/macro'
 
 export default function Ingredients({ amount, unit, ingredientItem }) {
   return (
-    <IngredientsWrapper>
+    <Wrapper>
       <Item>
         {amount} {unit}
       </Item>
       <Item>{ingredientItem}</Item>
-    </IngredientsWrapper>
+    </Wrapper>
   )
 }
 
-const IngredientsWrapper = styled.section`
+const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 2fr;
 `
