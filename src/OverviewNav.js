@@ -1,6 +1,16 @@
 import styled from 'styled-components/macro'
+import React from 'react'
 
-export default styled.nav`
+export default function OverviewNav({ title }) {
+  return (
+    <Navigation>
+      <Title>{title}</Title>
+      {/* <img src={require('./assets/search.svg')} alt="search" /> */}
+    </Navigation>
+  )
+}
+
+const Navigation = styled.nav`
   z-index: 2;
   position: fixed;
   display: flex;
@@ -19,4 +29,10 @@ export default styled.nav`
     bottom: -16px;
     left: 0;
   }
+`
+
+const Title = styled.h1`
+  font-size: 1.67rem;
+  font-weight: 700;
+  margin: 0;
 `
