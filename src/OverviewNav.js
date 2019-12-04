@@ -3,14 +3,14 @@ import React from 'react'
 
 export default function OverviewNav({ title }) {
   return (
-    <Navigation>
+    <Nav>
       <Title>{title}</Title>
       {/* <img src={require('./assets/search.svg')} alt="search" /> */}
-    </Navigation>
+    </Nav>
   )
 }
 
-const Navigation = styled.nav`
+const Nav = styled.nav`
   z-index: 2;
   position: fixed;
   display: flex;
