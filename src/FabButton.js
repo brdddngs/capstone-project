@@ -4,18 +4,15 @@ import { Link } from 'react-router-dom'
 
 export default function FabButton({ asset, alt }) {
   return (
-    <Link to="/create/newRecipe">
+    <LinkStyled to="/create/newRecipe">
       <Button>
         <img src={require(`./assets/${asset}.svg`)} alt={alt} />
       </Button>
-    </Link>
+    </LinkStyled>
   )
 }
 
 const Button = styled.span`
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,4 +20,15 @@ const Button = styled.span`
   height: 56px;
   border-radius: 50%;
   background-color: rgba(226, 148, 19, 0.95);
+`
+const LinkStyled = styled(Link)`
+  z-index: 1;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

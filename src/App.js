@@ -7,6 +7,7 @@ import FabButton from './FabButton.js'
 import NewRecipe from './NewRecipe.js'
 
 export default function App() {
+  //const [recipes, setRecipes] = useState([])
   const [selectedRecipe, setSelectedRecipe] = useState(recipesData[0])
 
   return (
@@ -30,7 +31,7 @@ export default function App() {
         </Route>
 
         <Route path="/create/newRecipe">
-          <NewRecipe />
+          <NewRecipe title="Neues Rezept erstellen" />
         </Route>
       </Switch>
     </Router>
