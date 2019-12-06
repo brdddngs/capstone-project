@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
-export default function FabButton({ asset, alt }) {
+export default function FabButton({ asset, alt, linkTo }) {
   return (
-    <LinkStyled to="/create/newRecipe">
+    <LinkStyled to={linkTo}>
       <Button>
         <img src={require(`./assets/${asset}.svg`)} alt={alt} />
       </Button>

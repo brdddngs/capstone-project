@@ -18,7 +18,11 @@ export default function App() {
             recipesData={recipesData}
             handleRecipeClick={index => handleRecipeClick(index)}
           />
-          <FabButton asset="add" alt="add a new recipe" />
+          <FabButton
+            linkTo="/create/newRecipe"
+            asset="add"
+            alt="add a new recipe"
+          />
         </Route>
 
         <Route path={`/detail/${selectedRecipe.title}`}>
