@@ -6,13 +6,14 @@ import add from './assets/add.svg'
 import add_a_photo from './assets/add_a_photo.svg'
 import minus from './assets/minus.svg'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-export default function NewRecipe({ title }) {
+export default function NewRecipe({ headline, onSubmit }) {
   const [inputList, setInputList] = useState([
     { ingredientItem: '', amount: '', unit: '' },
   ])
 
-  const options = [
+  const unitOptions = [
     'mg',
     'g',
     'pfd',
@@ -33,6 +34,19 @@ export default function NewRecipe({ title }) {
     setInputList([...inputList, { ingredientItem: '', amount: '', unit: '' }])
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+    const form = event.target
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+    const ingredients = inputList
+    const id = Math.round(Math.random() * 100000)
+
+    onSubmit({ ...data, ingredients, image: 'IMG_5959.jpg', id })
+    form.reset()
+    setInputList([{ ingredientItem: '', amount: '', unit: '' }])
+  }
+
   return (
     <Grid>
       <Nav>
@@ -41,14 +55,14 @@ export default function NewRecipe({ title }) {
         </Link>
       </Nav>
       <Container>
-        <Title>{title}</Title>
+        <Title>{headline}</Title>
 
         <TextButton onClick={() => console.log('add a photo someday …')}>
           <img src={add_a_photo} alt="Rezeptfoto aufnahmen" />
           <span className="text">Foto hinzufügen</span>
         </TextButton>
 
-        <FormStyled>
+        <FormStyled onSubmit={handleSubmit}>
           <LabelStyled>
             <InputStyled name="title" placeholder="Titel" />
           </LabelStyled>
@@ -99,7 +113,7 @@ export default function NewRecipe({ title }) {
                   <option value="" disabled hidden>
                     Einheit
                   </option>
-                  {options.map((option, index) => {
+                  {unitOptions.map((option, index) => {
                     return (
                       <option value={option} key={index}>
                         {option}
@@ -116,12 +130,13 @@ export default function NewRecipe({ title }) {
 
           <Subtitle>Anleitung</Subtitle>
 
-          <TextareaStyled placeholder="Schritt für Schritt ..." rows="6" />
+          <TextareaStyled
+            name="steps"
+            placeholder="Schritt für Schritt ..."
+            rows="6"
+          />
 
-          <Button
-            type="button"
-            onClick={() => console.log('button was clicked')}
-          >
+          <Button onClick={() => console.log('button was clicked')}>
             Rezept hinzufügen
           </Button>
         </FormStyled>
@@ -146,6 +161,9 @@ const Container = styled.section`
   top: 56px;
   width: 100%;
   padding: 0 20px;
+  &:last-child {
+    margin-bottom: 50px;
+  }
 `
 const Title = styled.h1`
   font-size: 1.375rem;
@@ -269,3 +287,6 @@ const TextButton = styled.button`
     margin-left: 10px;
   }
 `
+FormStyled.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+}
