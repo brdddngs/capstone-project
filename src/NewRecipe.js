@@ -3,16 +3,16 @@ import styled from 'styled-components/macro'
 import Grid from './Grid'
 import close from './assets/close.svg'
 import add from './assets/add.svg'
-import add_a_photo from './assets/add_a_photo.svg'
 import minus from './assets/minus.svg'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import AddPhoto from './AddPhoto'
 
 export default function NewRecipe({ headline, onSubmit }) {
   const [inputList, setInputList] = useState([
     { ingredientItem: '', amount: '', unit: '' },
   ])
-
+  const [recipeImage, setRecipeImage] = useState('')
   const unitOptions = [
     'mg',
     'g',
@@ -41,8 +41,9 @@ export default function NewRecipe({ headline, onSubmit }) {
     const data = Object.fromEntries(formData)
     const ingredients = inputList
     const id = Math.round(Math.random() * 100000)
+    const image = recipeImage
 
-    onSubmit({ ...data, ingredients, image: 'IMG_5959.jpg', id })
+    onSubmit({ ...data, ingredients, id, image })
     form.reset()
     setInputList([{ ingredientItem: '', amount: '', unit: '' }])
   }
@@ -57,10 +58,7 @@ export default function NewRecipe({ headline, onSubmit }) {
       <Container>
         <Title>{headline}</Title>
 
-        <TextButton onClick={() => console.log('add a photo someday …')}>
-          <img src={add_a_photo} alt="Rezeptfoto aufnahmen" />
-          <span className="text">Foto hinzufügen</span>
-        </TextButton>
+        <AddPhoto image={recipeImage} setImage={setRecipeImage}></AddPhoto>
 
         <FormStyled onSubmit={handleSubmit}>
           <LabelStyled>
@@ -274,19 +272,7 @@ const Button = styled.button`
     background-color: #a5a5a5;
   }
 `
-const TextButton = styled.button`
-  all: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin: 10px auto 20px;
-  & > span {
-    color: #e29413;
-    font-weight: 600;
-    margin-left: 10px;
-  }
-`
+
 FormStyled.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }

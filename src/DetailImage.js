@@ -6,7 +6,7 @@ export default function DetailIamge({ title, image }) {
     <Wrapper>
       <Title>{title}</Title>
       <Gradient />
-      <Iamge src={require(`./assets/img/${image}`)} alt={title} />
+      <Iamge src={image} alt={title} />
     </Wrapper>
   )
 }

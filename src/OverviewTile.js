@@ -6,15 +6,16 @@ export default function Tile({ title, image }) {
     <Wrapper>
       <TileTitle>{title}</TileTitle>
       <TileGradient />
-      <TileImage src={require(`./assets/img/${image}`)} alt={title} />
+      <TileImage src={image} alt={title} />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.section`
   position: relative;
-  min-width: 160px;
-  max-height: 160px;
+  width: 160px;
+  height: 160px;
+  background-color: coral;
 `
 
 const TileGradient = styled.div`
@@ -26,6 +27,7 @@ const TileGradient = styled.div`
 `
 const TileImage = styled.img`
   width: 100%;
+  height: 100%;
 `
 const TileTitle = styled.h2`
   z-index: 1;
