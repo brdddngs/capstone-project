@@ -10,7 +10,7 @@ import AddPhoto from './AddPhoto'
 
 export default function NewRecipe({ headline, onSubmit }) {
   const [inputList, setInputList] = useState([
-    { ingredientItem: '', amount: '', unit: '' },
+    { ingredientItem: '', amount: '', unit: '', id: Math.random() },
   ])
   const [recipeImage, setRecipeImage] = useState('')
   const unitOptions = [
@@ -31,7 +31,10 @@ export default function NewRecipe({ headline, onSubmit }) {
   ]
 
   function addNewInputs() {
-    setInputList([...inputList, { ingredientItem: '', amount: '', unit: '' }])
+    setInputList([
+      ...inputList,
+      { ingredientItem: '', amount: '', unit: '', id: Math.random() },
+    ])
   }
 
   function handleSubmit(event) {
@@ -73,6 +76,7 @@ export default function NewRecipe({ headline, onSubmit }) {
             function updateInput(event) {
               const inputElName = event.target.name
               const inputData = inputList[index]
+
               setInputList([
                 ...inputList.slice(0, index),
                 { ...inputData, [inputElName]: event.target.value },
@@ -80,12 +84,24 @@ export default function NewRecipe({ headline, onSubmit }) {
               ])
             }
 
+            function deleteInput() {
+              //   const inputData = inputList[index]
+              //  const id = inputData.id
+              //  console.log(id)
+              //  console.log(inputList.filter(input => input.id !== id))
+              setInputList([
+                ...inputList.slice(0, index),
+                ...inputList.slice(index + 1),
+              ])
+              //  setInputList([inputList.filter(input => input.id !== id)])
+              //   console.log(inputList)
+
+              //setInputList([inputList.filter(input => input.id !== inputId)])
+            }
+
             return (
               <Wrapper key={index}>
-                <ButtonCircle
-                  onClick={() => console.log('delete input someday …')}
-                  className="small"
-                >
+                <ButtonCircle onClick={deleteInput} className="small">
                   <img src={minus} alt="minus" />
                 </ButtonCircle>
                 <InputStyled
