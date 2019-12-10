@@ -5,7 +5,13 @@ import DetailContent from './DetailContent'
 import DetailImage from './DetailImage'
 import DetailNav from './DetailNav'
 
-export default function Detail({ title, steps, ingredients, image }) {
+export default function Detail({
+  title,
+  steps,
+  ingredients,
+  image,
+  selectedRecipe,
+}) {
   return (
     <Grid>
       <DetailNav />
