@@ -50,9 +50,7 @@ export default function App() {
   }
 
   function handleFormSubmit(newRecipe) {
-    console.log('handleFormSubmit in App', newRecipe)
     setRecipes([...recipes, newRecipe])
-    console.log('After handleFormSubmit in App', recipes)
   }
 
   function saveRecipes() {

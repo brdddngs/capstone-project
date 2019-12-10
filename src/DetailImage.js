@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function DetailIamge({ title, image }) {
+export default function DetailImage({ title, image }) {
   return (
     <Wrapper>
       <Title>{title}</Title>
       <Gradient />
-      <Iamge src={image} alt={title} />
+      <Image src={image} alt={title} />
     </Wrapper>
   )
 }
@@ -26,7 +26,7 @@ const Gradient = styled.div`
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 `
 
-const Iamge = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 320px;
   object-fit: cover;

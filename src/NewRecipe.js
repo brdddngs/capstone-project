@@ -142,9 +142,7 @@ export default function NewRecipe({ headline, onSubmit }) {
             rows="6"
           />
 
-          <Button onClick={() => console.log('button was clicked')}>
-            Rezept hinzufügen
-          </Button>
+          <Button>Rezept hinzufügen</Button>
         </FormStyled>
       </Container>
     </Grid>

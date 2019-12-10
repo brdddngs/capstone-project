@@ -52,7 +52,7 @@ export default function TestingImgUpload({ image, setImage, title }) {
               style={{ display: 'none' }}
             />
             <img src={add_a_photo} alt="Rezeptfoto aufnahmen" />
-            <span className="text">Foto hinzufügen</span>
+            <span>Foto hinzufügen</span>
           </TextButton>
         </>
       )}
