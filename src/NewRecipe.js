@@ -85,18 +85,10 @@ export default function NewRecipe({ headline, onSubmit }) {
             }
 
             function deleteInput() {
-              //   const inputData = inputList[index]
-              //  const id = inputData.id
-              //  console.log(id)
-              //  console.log(inputList.filter(input => input.id !== id))
               setInputList([
                 ...inputList.slice(0, index),
                 ...inputList.slice(index + 1),
               ])
-              //  setInputList([inputList.filter(input => input.id !== id)])
-              //   console.log(inputList)
-
-              //setInputList([inputList.filter(input => input.id !== inputId)])
             }
 
             return (
