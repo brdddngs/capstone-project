@@ -3,17 +3,16 @@ import styled from 'styled-components/macro'
 import Grid from './Grid'
 import close from './assets/close.svg'
 import add from './assets/add.svg'
+import add_a_photo from './assets/add_a_photo.svg'
 import minus from './assets/minus.svg'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import AddPhoto from './AddPhoto'
 
-export default function NewRecipe({ headline, onSubmit }) {
+export default function NewRecipe({ title }) {
   const [inputList, setInputList] = useState([
-    { ingredientItem: '', amount: '', unit: '', id: Math.random() },
+    { ingredientItem: '', amount: '', unit: '' },
   ])
-  const [recipeImage, setRecipeImage] = useState('')
-  const unitOptions = [
+
+  const options = [
     'mg',
     'g',
     'pfd',
@@ -31,24 +30,7 @@ export default function NewRecipe({ headline, onSubmit }) {
   ]
 
   function addNewInputs() {
-    setInputList([
-      ...inputList,
-      { ingredientItem: '', amount: '', unit: '', id: Math.random() },
-    ])
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.target
-    const formData = new FormData(form)
-    const data = Object.fromEntries(formData)
-    const ingredients = inputList
-    const id = Math.round(Math.random() * 100000)
-    const image = recipeImage
-
-    onSubmit({ ...data, ingredients, id, image })
-    form.reset()
-    setInputList([{ ingredientItem: '', amount: '', unit: '' }])
+    setInputList([...inputList, { ingredientItem: '', amount: '', unit: '' }])
   }
 
   return (
@@ -59,11 +41,14 @@ export default function NewRecipe({ headline, onSubmit }) {
         </Link>
       </Nav>
       <Container>
-        <Title>{headline}</Title>
+        <Title>{title}</Title>
 
-        <AddPhoto image={recipeImage} setImage={setRecipeImage}></AddPhoto>
+        <TextButton onClick={() => console.log('add a photo someday …')}>
+          <img src={add_a_photo} alt="Rezeptfoto aufnahmen" />
+          <span className="text">Foto hinzufügen</span>
+        </TextButton>
 
-        <FormStyled onSubmit={handleSubmit}>
+        <FormStyled>
           <LabelStyled>
             <InputStyled name="title" placeholder="Titel" />
           </LabelStyled>
@@ -76,7 +61,6 @@ export default function NewRecipe({ headline, onSubmit }) {
             function updateInput(event) {
               const inputElName = event.target.name
               const inputData = inputList[index]
-
               setInputList([
                 ...inputList.slice(0, index),
                 { ...inputData, [inputElName]: event.target.value },
@@ -84,16 +68,12 @@ export default function NewRecipe({ headline, onSubmit }) {
               ])
             }
 
-            function deleteInput() {
-              setInputList([
-                ...inputList.slice(0, index),
-                ...inputList.slice(index + 1),
-              ])
-            }
-
             return (
               <Wrapper key={index}>
-                <ButtonCircle onClick={deleteInput} className="small">
+                <ButtonCircle
+                  onClick={() => console.log('delete input someday …')}
+                  className="small"
+                >
                   <img src={minus} alt="minus" />
                 </ButtonCircle>
                 <InputStyled
@@ -119,7 +99,7 @@ export default function NewRecipe({ headline, onSubmit }) {
                   <option value="" disabled hidden>
                     Einheit
                   </option>
-                  {unitOptions.map((option, index) => {
+                  {options.map((option, index) => {
                     return (
                       <option value={option} key={index}>
                         {option}
@@ -136,13 +116,14 @@ export default function NewRecipe({ headline, onSubmit }) {
 
           <Subtitle>Anleitung</Subtitle>
 
-          <TextareaStyled
-            name="steps"
-            placeholder="Schritt für Schritt ..."
-            rows="6"
-          />
+          <TextareaStyled placeholder="Schritt für Schritt ..." rows="6" />
 
-          <Button>Rezept hinzufügen</Button>
+          <Button
+            type="button"
+            onClick={() => console.log('button was clicked')}
+          >
+            Rezept hinzufügen
+          </Button>
         </FormStyled>
       </Container>
     </Grid>
@@ -165,9 +146,6 @@ const Container = styled.section`
   top: 56px;
   width: 100%;
   padding: 0 20px;
-  &:last-child {
-    margin-bottom: 50px;
-  }
 `
 const Title = styled.h1`
   font-size: 1.375rem;
@@ -278,7 +256,16 @@ const Button = styled.button`
     background-color: #a5a5a5;
   }
 `
-
-FormStyled.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-}
+const TextButton = styled.button`
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px auto 20px;
+  & > span {
+    color: #e29413;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+`
