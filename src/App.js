@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import recipesData from './recipes.json'
 import Detail from './Detail.js'
 import Overview from './Overview.js'
 import FabButton from './FabButton.js'
 import NewRecipe from './NewRecipe.js'
 
 export default function App() {
-  //const [recipes, setRecipes] = useState([])
-  const [selectedRecipe, setSelectedRecipe] = useState(recipesData[0])
+  let recipesFromStorage = JSON.parse(localStorage.getItem('recipes'))
+  const [recipes, setRecipes] = useState(recipesFromStorage || [])
+  saveRecipes()
+  const [selectedRecipe, setSelectedRecipe] = useState(recipes[0])
 
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
           <Overview
-            recipesData={recipesData}
+            recipes={recipes}
             handleRecipeClick={index => handleRecipeClick(index)}
           />
           <FabButton
@@ -35,13 +36,24 @@ export default function App() {
         </Route>
 
         <Route path="/create/newRecipe">
-          <NewRecipe title="Neues Rezept erstellen" />
+          <NewRecipe
+            headline="Neues Rezept erstellen"
+            onSubmit={handleFormSubmit}
+          />
         </Route>
       </Switch>
     </Router>
   )
 
   function handleRecipeClick(index) {
-    setSelectedRecipe(recipesData[index])
+    setSelectedRecipe(recipes[index])
+  }
+
+  function handleFormSubmit(newRecipe) {
+    setRecipes([...recipes, newRecipe])
+  }
+
+  function saveRecipes() {
+    localStorage.setItem('recipes', JSON.stringify(recipes))
   }
 }
