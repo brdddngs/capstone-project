@@ -1,15 +1,9 @@
 import React, { useState } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Detail from './Detail.js'
 import Overview from './Overview.js'
 import FabButton from './FabButton.js'
 import NewRecipe from './NewRecipe.js'
-import EditRecipe from './EditRecipe'
 
 export default function App() {
   let recipesFromStorage = JSON.parse(localStorage.getItem('recipes'))
@@ -46,9 +40,6 @@ export default function App() {
             headline="Neues Rezept erstellen"
             onSubmit={handleFormSubmit}
           />
-        </Route>
-        <Route path={`/detail/${selectedRecipe.title}/edit`}>
-          <EditRecipe></EditRecipe>
         </Route>
       </Switch>
     </Router>

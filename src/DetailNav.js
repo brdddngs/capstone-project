@@ -2,16 +2,12 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import back from './assets/arrow_back.svg'
-import edit from './assets/edit.svg'
 
 export default function DetailNav() {
   return (
     <Nav>
       <Link to="/">
-        <img src={back} alt="zurück" />
-      </Link>
-      <Link to="/">
-        <img src={edit} alt="bearbeiten" />
+        <img src={back} alt="back" />
       </Link>
     </Nav>
   )
