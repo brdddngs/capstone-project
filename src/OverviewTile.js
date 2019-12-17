@@ -15,7 +15,7 @@ const Wrapper = styled.section`
   position: relative;
   width: 160px;
   height: 160px;
-  background-color: coral;
+  background-color: rgb(226, 148, 19);
 `
 
 const TileGradient = styled.div`
@@ -28,6 +28,7 @@ const TileGradient = styled.div`
 const TileImage = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `
 const TileTitle = styled.h2`
   z-index: 1;
