@@ -11,8 +11,8 @@ import AddPhoto from './AddPhoto'
 export default function Form({
   headline,
   onSubmit,
-  onTitleChange,
   title,
+  onTitleChange,
   steps,
   onStepsChange,
   image,
@@ -128,7 +128,7 @@ export default function Form({
                   onChange={updateInput}
                   placeholder="Einheit"
                 >
-                  <option value="" disabled hidden>
+                  <option selected hidden>
                     Einheit
                   </option>
                   {unitOptions.map((option, index) => {
