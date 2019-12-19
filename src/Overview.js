@@ -4,17 +4,13 @@ import Nav from './OverviewNav'
 import Tile from './OverviewTile'
 import { Link } from 'react-router-dom'
 
-export default function Overview({ recipes, handleRecipeClick }) {
+export default function Overview({ recipes }) {
   return (
     <>
-      <Nav title="Cookbook" />
+      <Nav pageTitle="Cookbook" />
       <TileContainer>
-        {recipes.map((recipe, index) => (
-          <Link
-            to={`/detail/${recipe.title}`}
-            key={recipe.id}
-            onClick={() => handleRecipeClick(index)}
-          >
+        {recipes.map(recipe => (
+          <Link to={`/detail/${recipe.id}`} key={recipe.id}>
             <Tile {...recipe} />
           </Link>
         ))}
@@ -27,15 +23,11 @@ const TileContainer = styled.section`
   width: 100%;
   position: absolute;
   top: 56px;
-  padding: 20px;
+  padding: 10px 20px 66px;
   display: grid;
   grid-template-columns: repeat(2, 160px);
   grid-template-rows: repeat(2, 160px);
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   background-color: #fff;
-  &::after {
-    content: '';
-    height: 40px;
-  }
 `

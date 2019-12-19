@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro'
 import React from 'react'
 
-export default function OverviewNav({ title }) {
+export default function OverviewNav({ pageTitle }) {
   return (
     <Nav>
-      <Title>{title}</Title>
+      <Title>{pageTitle}</Title>
       {/* <img src={require('./assets/search.svg')} alt="search" /> */}
     </Nav>
   )
@@ -15,10 +15,10 @@ const Nav = styled.nav`
   position: fixed;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   height: 56px;
-  padding: 0 20px;
+  padding: 0 20px 4px;
   background-color: #fff;
   &::after {
     content: '';
@@ -26,7 +26,7 @@ const Nav = styled.nav`
     width: 100%;
     background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
     position: absolute;
-    bottom: -16px;
+    bottom: -15px;
     left: 0;
   }
 `
