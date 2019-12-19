@@ -128,9 +128,7 @@ export default function Form({
                   onChange={updateInput}
                   placeholder="Einheit"
                 >
-                  <option selected hidden>
-                    Einheit
-                  </option>
+                  <option hidden>Einheit</option>
                   {unitOptions.map((option, index) => {
                     return (
                       <option value={option} key={index}>

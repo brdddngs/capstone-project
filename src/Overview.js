@@ -13,9 +13,9 @@ export default function Overview({ recipes }) {
         {recipes.map(recipe => (
           <Link to={`/detail/${recipe.id}`} key={recipe.id}>
             <Tile>
-              <TileTitle>{recipe.title}</TileTitle>
-              <TileGradient />
-              <TileImage src={recipe.image} />
+              <Title>{recipe.title}</Title>
+              <Gradient />
+              <Image src={recipe.image} />
             </Tile>
           </Link>
         ))}
@@ -70,19 +70,19 @@ const Tile = styled.section`
   background-color: rgb(226, 148, 19);
 `
 
-const TileGradient = styled.div`
+const Gradient = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 60%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 `
-const TileImage = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
 `
-const TileTitle = styled.h2`
+const Title = styled.h2`
   z-index: 1;
   position: absolute;
   bottom: 10px;
