@@ -38,7 +38,7 @@ export default function TestingImgUpload({ image, setImage, title }) {
     <div>
       {image ? (
         <ImageWrapper>
-          <RecipeImage src={image} alt={title} />
+          <RecipeImage src={image} />
         </ImageWrapper>
       ) : (
         <>
@@ -51,7 +51,7 @@ export default function TestingImgUpload({ image, setImage, title }) {
               accept="image/*"
               style={{ display: 'none' }}
             />
-            <img src={add_a_photo} alt="Rezeptfoto aufnahmen" />
+            <img src={add_a_photo} alt="" />
             <span>Foto hinzufügen</span>
           </TextButton>
         </>

@@ -24,12 +24,11 @@ export default function Detail({ recipes }) {
         </Link>
       </Nav>
 
-      <Grid>
-        <DetailImage>
+      <Container>
+        <Header>
           <Title>{title}</Title>
-          <Gradient />
-          <Image src={image} alt={title} />
-        </DetailImage>
+          <Image src={image} />
+        </Header>
         <Wrapper>
           <TabBar>
             <Tab
@@ -50,7 +49,7 @@ export default function Detail({ recipes }) {
             {showIngredients ? renderIngredients() : renderSteps()}
           </Content>
         </Wrapper>
-      </Grid>
+      </Container>
     </>
   )
 
@@ -84,7 +83,7 @@ export default function Detail({ recipes }) {
   }
 }
 
-const Grid = styled.div`
+const Container = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -107,33 +106,30 @@ const Nav = styled.nav`
   background-color: rgba(255, 255, 255, 0.7);
 `
 
-const DetailImage = styled.section`
+const Header = styled.section`
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 100%;
   background-color: #e29413;
-`
-
-const Gradient = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 `
 
 const Image = styled.img`
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
 `
 
 const Title = styled.h2`
   position: absolute;
-  bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
   z-index: 1;
   margin: 0;
-  padding: 0 20px;
+  padding: 0 20px 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   font-size: 1.5rem;
   font-weight: 600;
   color: #f2f2f2;
@@ -159,7 +155,7 @@ const TabBar = styled.nav`
     content: '';
     height: 16px;
     width: 100%;
-    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+    background: linear-gradient(#fff, rgba(255, 255, 255, 0));
     position: absolute;
     bottom: -15px;
     left: 0;

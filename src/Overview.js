@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
+import search from './assets/search.svg'
 
 export default function Overview({ recipes }) {
   return (
     <>
       <Nav>
         <PageTitle>Cookbook</PageTitle>
-        {/* <img src={require('./assets/search.svg')} alt="search" /> */}
+        <img src={search} alt="search" />
       </Nav>
       <TileContainer>
         {recipes.map(recipe => (
@@ -29,18 +30,18 @@ const Nav = styled.nav`
   position: fixed;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   height: 56px;
-  padding: 0 20px 4px;
+  padding: 14px 20px 0;
   background-color: #fff;
   &::after {
     content: '';
-    height: 16px;
+    height: 10px;
     width: 100%;
     background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
     position: absolute;
-    bottom: -15px;
+    bottom: -10px;
     left: 0;
   }
 `

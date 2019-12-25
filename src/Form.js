@@ -23,6 +23,7 @@ export default function Form({
   ingredients,
   onIngredientsChange,
   buttonText,
+  linkTo,
 }) {
   const unitOptions = [
     'mg',
@@ -61,7 +62,7 @@ export default function Form({
   return (
     <Grid>
       <Nav>
-        <Link to="/">
+        <Link to={linkTo}>
           <img src={close} alt="close" />
         </Link>
       </Nav>
@@ -276,6 +277,7 @@ const TextareaStyled = styled.textarea`
   padding: 8px 6px;
   border: 1px solid #a5a5a5;
   color: #313131;
+
   &::placeholder {
     color: #a5a5a5;
   }

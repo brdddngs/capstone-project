@@ -36,11 +36,12 @@ export default function App() {
             headline="Neues Rezept erstellen"
             onSubmit={handleFormSubmit}
             recipes={recipes}
+            linkTo="/"
           />
         </Route>
         <Route path={`/detail/:id/edit`}>
           <EditRecipe
-            headline="Recept editieren"
+            headline="Rezept bearbeiten"
             recipes={recipes}
             onSubmit={handleEditedRecipe}
           />
