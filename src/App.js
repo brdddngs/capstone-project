@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/create/newRecipe">
           <NewRecipe
             headline="Neues Rezept erstellen"
-            onSubmit={handleFormSubmit}
+            onSubmit={handleNewRecipe}
             recipes={recipes}
             linkTo="/"
           />
@@ -46,7 +46,7 @@ export default function App() {
     </Router>
   )
 
-  function handleFormSubmit(newRecipe) {
+  function handleNewRecipe(newRecipe) {
     setRecipes([...recipes, newRecipe])
   }
 
