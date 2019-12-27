@@ -3,11 +3,11 @@ import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
 
-export default function Overview({ recipes }) {
+export default function Overview({ recipes, headline }) {
   return (
     <>
       <Nav>
-        <PageTitle>Cookbook</PageTitle>
+        <Headline>{headline}</Headline>
         <img src={search} alt="search" />
       </Nav>
       <TileContainer>
@@ -46,7 +46,7 @@ const Nav = styled.nav`
   }
 `
 
-const PageTitle = styled.h1`
+const Headline = styled.h1`
   font-size: 1.67rem;
   font-weight: 700;
   margin: 0;

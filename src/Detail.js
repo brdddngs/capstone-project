@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import { Link, useParams } from 'react-router-dom'
 import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
-import Ingredients from './Ingredients'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -67,12 +66,12 @@ export default function Detail({ recipes }) {
     return (
       <>
         {ingredients.map((ingredient, index) => (
-          <Ingredients
-            key={index}
-            amount={ingredient.amount}
-            unit={ingredient.unit}
-            ingredientItem={ingredient.ingredientItem}
-          />
+          <IngredientWrapper key={index}>
+            <Item>
+              {ingredient.amount} {ingredient.unit}
+            </Item>
+            <Item>{ingredient.ingredientItem}</Item>
+          </IngredientWrapper>
         ))}
       </>
     )
@@ -184,4 +183,15 @@ const Content = styled.div`
 
 const Steps = styled.p`
   margin: 0;
+`
+
+const IngredientWrapper = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+`
+const Item = styled.p`
+  margin: 3px 6px;
+  &:first-child {
+    text-align: right;
+  }
 `

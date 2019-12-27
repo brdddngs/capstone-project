@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
-export default function FabButton({ asset, alt, linkTo }) {
+export default function FabButton({ asset, linkTo }) {
   return (
     <LinkStyled to={linkTo}>
       <Button>
-        <img src={require(`./assets/${asset}.svg`)} alt={alt} />
+        <img src={require(`./assets/${asset}.svg`)} alt="" />
       </Button>
     </LinkStyled>
   )
