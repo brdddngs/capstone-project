@@ -2,14 +2,18 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
+import Grid from './Grid'
 
 export default function Overview({ recipes, headline }) {
   return (
-    <>
-      <Nav>
+    <Grid>
+      <Header>
         <Headline>{headline}</Headline>
-        <img src={search} alt="search" />
-      </Nav>
+        <SearchIcon htmlFor="search">
+          <img src={search} alt="search" />
+        </SearchIcon>
+        <SearchBar id="search"></SearchBar>
+      </Header>
       <TileContainer>
         {recipes.map(recipe => (
           <Link to={`/detail/${recipe.id}`} key={recipe.id}>
@@ -21,28 +25,27 @@ export default function Overview({ recipes, headline }) {
           </Link>
         ))}
       </TileContainer>
-    </>
+    </Grid>
   )
 }
 
-const Nav = styled.nav`
-  z-index: 2;
-  position: fixed;
+const Header = styled.header`
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 56px;
+  height: 100%;
   padding: 14px 20px 0;
   background-color: #fff;
   &::after {
     content: '';
-    height: 10px;
+    height: 11px;
     width: 100%;
     background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
     position: absolute;
     bottom: -10px;
     left: 0;
+    z-index: 2;
   }
 `
 
@@ -52,10 +55,22 @@ const Headline = styled.h1`
   margin: 0;
 `
 
+const SearchIcon = styled.label`
+  position: absolute;
+  right: 20px;
+  height: 24px;
+  background-color: sandybrown;
+`
+
+const SearchBar = styled.input`
+  background-color: #fff;
+  display: none;
+`
+
 const TileContainer = styled.section`
   width: 100%;
-  position: absolute;
-  top: 56px;
+  height: 100%;
+  overflow-y: scroll;
   padding: 10px 20px 66px;
   display: grid;
   grid-template-columns: repeat(2, 160px);
