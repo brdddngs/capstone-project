@@ -19,12 +19,8 @@ export default function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Overview recipes={recipes} />
-          <FabButton
-            linkTo="/create/newRecipe"
-            asset="add"
-            alt="add a new recipe"
-          />
+          <Overview recipes={recipes} headline="Cookbook" />
+          <FabButton linkTo="/create/newRecipe" asset="add" />
         </Route>
 
         <Route path={`/detail/:id`} exact>
@@ -34,13 +30,14 @@ export default function App() {
         <Route path="/create/newRecipe">
           <NewRecipe
             headline="Neues Rezept erstellen"
-            onSubmit={handleFormSubmit}
+            onSubmit={handleNewRecipe}
             recipes={recipes}
+            linkTo="/"
           />
         </Route>
         <Route path={`/detail/:id/edit`}>
           <EditRecipe
-            headline="Recept editieren"
+            headline="Rezept bearbeiten"
             recipes={recipes}
             onSubmit={handleEditedRecipe}
           />
@@ -49,7 +46,7 @@ export default function App() {
     </Router>
   )
 
-  function handleFormSubmit(newRecipe) {
+  function handleNewRecipe(newRecipe) {
     setRecipes([...recipes, newRecipe])
   }
 

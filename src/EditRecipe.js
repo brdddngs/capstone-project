@@ -25,6 +25,7 @@ export default function EditRecipe({ headline, recipes, onSubmit }) {
       headline={headline}
       onSubmit={onSubmit}
       buttonText="Rezept ändern"
+      linkTo={`/detail/${id}`}
     />
   )
 }
