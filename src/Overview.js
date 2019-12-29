@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
 import Grid from './Grid'
 
 export default function Overview({ recipes, headline }) {
+  const [inputSearchbar, setInputSearchbar] = useState('')
+  const [recipesFiltered, setRecipesFiltered] = useState(recipes)
+
+  useEffect(() => {
+    setRecipesFiltered(
+      recipes.filter(recipe => fuzzy_match(recipe, inputSearchbar))
+    )
+  }, [inputSearchbar, recipes])
+
   return (
     <Grid>
       <Header>
@@ -12,10 +21,13 @@ export default function Overview({ recipes, headline }) {
         <SearchIcon htmlFor="search">
           <img src={search} alt="search" />
         </SearchIcon>
-        <SearchBar id="search"></SearchBar>
+        <SearchBar
+          onInput={event => setInputSearchbar(event.target.value)}
+          id="search"
+        ></SearchBar>
       </Header>
       <TileContainer>
-        {recipes.map(recipe => (
+        {recipesFiltered.map(recipe => (
           <Link to={`/detail/${recipe.id}`} key={recipe.id}>
             <Tile>
               <Title>{recipe.title}</Title>
@@ -27,6 +39,28 @@ export default function Overview({ recipes, headline }) {
       </TileContainer>
     </Grid>
   )
+
+  function fuzzy_match(recipe, inputSearchbar) {
+    let input = inputSearchbar.toLowerCase()
+    let title = recipe.title.toLowerCase()
+    const letterList = title.split('')
+
+    let searchIndex = 0
+
+    letterList.forEach(i => {
+      if (i === input[searchIndex]) {
+        searchIndex += 1
+        if (searchIndex >= input.length) {
+          return false
+        }
+      }
+    })
+
+    if (searchIndex !== input.length) {
+      return ''
+    }
+    return letterList.join('')
+  }
 }
 
 const Header = styled.header`
@@ -59,19 +93,33 @@ const SearchIcon = styled.label`
   position: absolute;
   right: 20px;
   height: 24px;
-  background-color: sandybrown;
+  z-index: 2;
 `
 
 const SearchBar = styled.input`
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  right: 20px;
   background-color: #fff;
-  display: none;
+  padding: 8px 6px;
+  color: #313131;
+  caret-color: #e29413;
+  width: 0;
+  z-index: 1;
+  transition: width 0.2s ease-in;
+  &:focus {
+    width: calc(100% - 40px);
+    border-bottom: 2px solid #e29413;
+    transition: width 0.4s ease-in;
+  }
 `
 
 const TileContainer = styled.section`
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  padding: 10px 20px 66px;
+  padding: 10px 20px 0;
   display: grid;
   grid-template-columns: repeat(2, 160px);
   grid-template-rows: repeat(2, 160px);
@@ -79,6 +127,7 @@ const TileContainer = styled.section`
   gap: 12px;
   background-color: #fff;
 `
+
 const Tile = styled.section`
   position: relative;
   width: 160px;
