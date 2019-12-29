@@ -10,7 +10,7 @@ export default function Overview({ recipes, headline }) {
 
   useEffect(() => {
     setRecipesFiltered(
-      recipes.filter(recipe => fuzzy_match(recipe, inputSearchbar))
+      recipes.filter(recipe => searchResult(recipe, inputSearchbar))
     )
   }, [inputSearchbar, recipes])
 
@@ -40,7 +40,7 @@ export default function Overview({ recipes, headline }) {
     </Grid>
   )
 
-  function fuzzy_match(recipe, inputSearchbar) {
+  function searchResult(recipe, inputSearchbar) {
     let input = inputSearchbar.toLowerCase()
     let title = recipe.title.toLowerCase()
     const letterList = title.split('')
