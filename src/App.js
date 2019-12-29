@@ -19,8 +19,8 @@ export default function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Overview recipes={recipes} headline="Cookbook" />
           <FabButton linkTo="/create/newRecipe" asset="add" />
+          <Overview recipes={recipes} headline="Cookbook" />
         </Route>
 
         <Route path={`/detail/:id`} exact>

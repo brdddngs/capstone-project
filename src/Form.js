@@ -163,25 +163,31 @@ export default function Form({
 }
 
 const Nav = styled.nav`
-  z-index: 1;
-  position: fixed;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
   width: 100%;
-  height: 56px;
+  height: 100%;
   padding: 0 20px;
   background-color: #fff;
+  &::after {
+    content: '';
+    height: 11px;
+    width: 100%;
+    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 2;
+  }
 `
 
 const Container = styled.section`
-  position: absolute;
-  top: 56px;
   width: 100%;
+  height: 100%;
+  overflow-y: scroll;
   padding: 0 20px;
-  &:last-child {
-    margin-bottom: 50px;
-  }
 `
 
 const Title = styled.h1`
@@ -296,7 +302,7 @@ const Button = styled.button`
   width: 190px;
   text-align: center;
   color: #f2f2f2;
-  margin: 10px auto 0;
+  margin: 10px auto 80px;
   &:disabled {
     background-color: #a5a5a5;
   }

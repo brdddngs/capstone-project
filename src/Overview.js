@@ -1,17 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
+import Grid from './Grid'
 
 export default function Overview({ recipes, headline }) {
+  const [inputSearchbar, setInputSearchbar] = useState('')
+  const [recipesFiltered, setRecipesFiltered] = useState(recipes)
+
+  useEffect(() => {
+    setRecipesFiltered(
+      recipes.filter(recipe => fuzzy_match(recipe, inputSearchbar))
+    )
+  }, [inputSearchbar, recipes])
+
   return (
-    <>
-      <Nav>
+    <Grid>
+      <Header>
         <Headline>{headline}</Headline>
-        <img src={search} alt="search" />
-      </Nav>
+        <SearchIcon htmlFor="search">
+          <img src={search} alt="search" />
+        </SearchIcon>
+        <SearchBar
+          onInput={event => setInputSearchbar(event.target.value)}
+          id="search"
+        ></SearchBar>
+      </Header>
       <TileContainer>
-        {recipes.map(recipe => (
+        {recipesFiltered.map(recipe => (
           <Link to={`/detail/${recipe.id}`} key={recipe.id}>
             <Tile>
               <Title>{recipe.title}</Title>
@@ -21,28 +37,49 @@ export default function Overview({ recipes, headline }) {
           </Link>
         ))}
       </TileContainer>
-    </>
+    </Grid>
   )
+
+  function fuzzy_match(recipe, inputSearchbar) {
+    let input = inputSearchbar.toLowerCase()
+    let title = recipe.title.toLowerCase()
+    const letterList = title.split('')
+
+    let searchIndex = 0
+
+    letterList.forEach(i => {
+      if (i === input[searchIndex]) {
+        searchIndex += 1
+        if (searchIndex >= input.length) {
+          return false
+        }
+      }
+    })
+
+    if (searchIndex !== input.length) {
+      return ''
+    }
+    return letterList.join('')
+  }
 }
 
-const Nav = styled.nav`
-  z-index: 2;
-  position: fixed;
+const Header = styled.header`
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 56px;
+  height: 100%;
   padding: 14px 20px 0;
   background-color: #fff;
   &::after {
     content: '';
-    height: 10px;
+    height: 11px;
     width: 100%;
     background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
     position: absolute;
     bottom: -10px;
     left: 0;
+    z-index: 2;
   }
 `
 
@@ -52,11 +89,37 @@ const Headline = styled.h1`
   margin: 0;
 `
 
+const SearchIcon = styled.label`
+  position: absolute;
+  right: 20px;
+  height: 24px;
+  z-index: 2;
+`
+
+const SearchBar = styled.input`
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  right: 20px;
+  background-color: #fff;
+  padding: 8px 6px;
+  color: #313131;
+  caret-color: #e29413;
+  width: 0;
+  z-index: 1;
+  transition: width 0.2s ease-in;
+  &:focus {
+    width: calc(100% - 40px);
+    border-bottom: 2px solid #e29413;
+    transition: width 0.4s ease-in;
+  }
+`
+
 const TileContainer = styled.section`
   width: 100%;
-  position: absolute;
-  top: 56px;
-  padding: 10px 20px 66px;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 10px 20px 0;
   display: grid;
   grid-template-columns: repeat(2, 160px);
   grid-template-rows: repeat(2, 160px);
@@ -64,6 +127,7 @@ const TileContainer = styled.section`
   gap: 12px;
   background-color: #fff;
 `
+
 const Tile = styled.section`
   position: relative;
   width: 160px;
