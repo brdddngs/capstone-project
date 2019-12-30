@@ -122,11 +122,18 @@ const TileContainer = styled.section`
   overflow-y: scroll;
   padding: 10px 20px 0;
   display: grid;
+  position: relative;
   grid-template-columns: repeat(2, 160px);
   grid-template-rows: repeat(2, 160px);
   justify-content: center;
   gap: 12px;
   background-color: #fff;
+  &::after {
+    content: '';
+    height: 54px;
+    width: 100%;
+    bottom: -54px;
+  }
 `
 
 const Tile = styled.section`
