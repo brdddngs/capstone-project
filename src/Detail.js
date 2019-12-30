@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import { Link, useParams } from 'react-router-dom'
 import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
+import defaultImg from './assets/img/default-img.jpg'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -26,7 +27,9 @@ export default function Detail({ recipes }) {
       <Container>
         <Header>
           <Title>{title}</Title>
-          <Image src={image} />
+          <Image src={image === '' ? defaultImg : image} />
+          {console.log(image)}
+          {console.log(recipes.find(recipe => recipe.id === id))}
         </Header>
         <Wrapper>
           <TabBar>

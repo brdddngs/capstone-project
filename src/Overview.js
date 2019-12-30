@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
 import Grid from './Grid'
+import defaultImg from './assets/img/default-img.jpg'
 
 export default function Overview({ recipes, headline }) {
   const [inputSearchbar, setInputSearchbar] = useState('')
@@ -32,7 +33,7 @@ export default function Overview({ recipes, headline }) {
             <Tile>
               <Title>{recipe.title}</Title>
               <Gradient />
-              <Image src={recipe.image} />
+              <Image src={recipe.image === '' ? defaultImg : recipe.image} />
             </Tile>
           </Link>
         ))}
