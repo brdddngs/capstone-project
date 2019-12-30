@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
 import Grid from './Grid'
-import defaultImg from './assets/img/default-img.jpg'
+import defaultImg from './assets/img/recipe-default.jpg'
 
 export default function Overview({ recipes, headline }) {
   const [inputSearchbar, setInputSearchbar] = useState('')
