@@ -24,6 +24,7 @@ export default function App() {
         </Route>
 
         <Route path={`/detail/:id`} exact>
+          <FabButton linkTo="" asset="add_alarm"></FabButton>
           <Detail recipes={recipes} />
         </Route>
 

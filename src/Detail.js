@@ -138,6 +138,7 @@ const Title = styled.h2`
 const Wrapper = styled.section`
   display: grid;
   grid-template-rows: 66px auto;
+  position: relative;
   width: 100%;
   padding: 0 20px;
   position: relative;
@@ -177,6 +178,7 @@ const Tab = styled.li`
   }
 `
 const Content = styled.div`
+  position: relative;
   width: 100%;
   overflow-y: scroll;
   padding: 18px 0 26px;
@@ -184,11 +186,17 @@ const Content = styled.div`
 
 const Steps = styled.p`
   margin: 0;
+  &:last-child {
+    padding-bottom: 54px;
+  }
 `
 
 const IngredientWrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 2fr;
+  &:last-child {
+    padding-bottom: 54px;
+  }
 `
 const Item = styled.p`
   margin: 3px 6px;
