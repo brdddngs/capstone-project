@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import { Link, useParams } from 'react-router-dom'
 import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
-import defaultImg from './assets/img/recipe-default.jpg'
+import defaultImg from './assets/img/default-img-detail2.jpg'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
