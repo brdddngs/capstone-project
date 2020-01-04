@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import search from './assets/search.svg'
 import Grid from './Grid'
+import defaultImg from './assets/img/default-img-overview2.jpg'
 
 export default function Overview({ recipes, headline }) {
   const [inputSearchbar, setInputSearchbar] = useState('')
@@ -32,7 +33,7 @@ export default function Overview({ recipes, headline }) {
             <Tile>
               <Title>{recipe.title}</Title>
               <Gradient />
-              <Image src={recipe.image} />
+              <Image src={recipe.image === '' ? defaultImg : recipe.image} />
             </Tile>
           </Link>
         ))}
@@ -121,11 +122,18 @@ const TileContainer = styled.section`
   overflow-y: scroll;
   padding: 10px 20px 0;
   display: grid;
+  position: relative;
   grid-template-columns: repeat(2, 160px);
   grid-template-rows: repeat(2, 160px);
   justify-content: center;
   gap: 12px;
   background-color: #fff;
+  &::after {
+    content: '';
+    height: 54px;
+    width: 100%;
+    bottom: -54px;
+  }
 `
 
 const Tile = styled.section`
