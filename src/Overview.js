@@ -48,8 +48,8 @@ export default function Overview({ recipes, headline }) {
 
     let searchIndex = 0
 
-    letterList.forEach(i => {
-      if (i === input[searchIndex]) {
+    letterList.forEach(letter => {
+      if (letter === input[searchIndex]) {
         searchIndex += 1
         if (searchIndex >= input.length) {
           return false

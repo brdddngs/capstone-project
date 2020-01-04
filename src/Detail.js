@@ -28,8 +28,6 @@ export default function Detail({ recipes }) {
         <Header>
           <Title>{title}</Title>
           <Image src={image === '' ? defaultImg : image} />
-          {console.log(image)}
-          {console.log(recipes.find(recipe => recipe.id === id))}
         </Header>
         <Wrapper>
           <TabBar>
