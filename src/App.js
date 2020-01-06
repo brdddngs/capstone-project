@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Detail from './Detail.js'
 import Overview from './Overview.js'
 import FabButton from './FabButton.js'
@@ -19,7 +19,9 @@ export default function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <FabButton linkTo="/create/newRecipe" asset="add" />
+          <Link to="/create/newRecipe">
+            <FabButton asset="add" />
+          </Link>
           <Overview recipes={recipes} headline="Cookbook" />
         </Route>
 

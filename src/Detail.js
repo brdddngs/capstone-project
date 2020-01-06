@@ -4,6 +4,8 @@ import { Link, useParams } from 'react-router-dom'
 import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
 import defaultImg from './assets/img/default-img-detail2.jpg'
+import FabButton from './FabButton'
+import Alarm from './Alarm'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -13,8 +15,11 @@ export default function Detail({ recipes }) {
   const [showIngredients, setShowIngredients] = useState(true)
   const [showSteps, setShowSteps] = useState(false)
 
+  const [showAlarm, setShowAlarm] = useState(false)
+
   return (
     <>
+      {showAlarm ? <Alarm onClose={() => toggleAlarm()} /> : null}
       <Nav>
         <Link to="/">
           <img src={back} alt="zurück" />
@@ -30,6 +35,7 @@ export default function Detail({ recipes }) {
           <Image src={image === '' ? defaultImg : image} />
         </Header>
         <Wrapper>
+          <FabButton asset="add_alarm" onClick={() => toggleAlarm()} />
           <TabBar>
             <Tab
               className={showIngredients ? 'active' : ''}
@@ -80,6 +86,10 @@ export default function Detail({ recipes }) {
 
   function renderSteps() {
     return <Steps>{steps}</Steps>
+  }
+
+  function toggleAlarm() {
+    setShowAlarm(!showAlarm)
   }
 }
 
@@ -138,6 +148,7 @@ const Title = styled.h2`
 const Wrapper = styled.section`
   display: grid;
   grid-template-rows: 66px auto;
+  position: relative;
   width: 100%;
   padding: 0 20px;
   position: relative;
@@ -177,6 +188,7 @@ const Tab = styled.li`
   }
 `
 const Content = styled.div`
+  position: relative;
   width: 100%;
   overflow-y: scroll;
   padding: 18px 0 26px;
@@ -184,11 +196,17 @@ const Content = styled.div`
 
 const Steps = styled.p`
   margin: 0;
+  &:last-child {
+    padding-bottom: 54px;
+  }
 `
 
 const IngredientWrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 2fr;
+  &:last-child {
+    padding-bottom: 54px;
+  }
 `
 const Item = styled.p`
   margin: 3px 6px;
