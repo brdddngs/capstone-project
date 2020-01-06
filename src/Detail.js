@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
 import defaultImg from './assets/img/default-img-detail2.jpg'
+import FabButton from './FabButton'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -12,6 +13,8 @@ export default function Detail({ recipes }) {
   )
   const [showIngredients, setShowIngredients] = useState(true)
   const [showSteps, setShowSteps] = useState(false)
+
+  const [showAlarm, setShowAlarm] = useState(false)
 
   return (
     <>
@@ -30,6 +33,7 @@ export default function Detail({ recipes }) {
           <Image src={image === '' ? defaultImg : image} />
         </Header>
         <Wrapper>
+          <FabButton asset="add_alarm" onClick={() => toggleAlarm()} />
           <TabBar>
             <Tab
               className={showIngredients ? 'active' : ''}
@@ -47,6 +51,7 @@ export default function Detail({ recipes }) {
 
           <Content>
             {showIngredients ? renderIngredients() : renderSteps()}
+            {showAlarm ? <AlarmTry></AlarmTry> : null}
           </Content>
         </Wrapper>
       </Container>
@@ -81,7 +86,21 @@ export default function Detail({ recipes }) {
   function renderSteps() {
     return <Steps>{steps}</Steps>
   }
+
+  function toggleAlarm() {
+    setShowAlarm(!showAlarm)
+  }
+
+  function renderAlarm() {
+    return <AlarmTry></AlarmTry>
+  }
 }
+
+const AlarmTry = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+`
 
 const Container = styled.div`
   position: absolute;

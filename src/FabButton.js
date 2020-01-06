@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { Link } from 'react-router-dom'
 
-export default function FabButton({ asset, linkTo }) {
+export default function FabButton({ asset, onClick }) {
   return (
-    <LinkStyled to={linkTo}>
+    <LinkStyled onClick={onClick}>
       <Button>
         <img src={require(`./assets/${asset}.svg`)} alt="" />
       </Button>
@@ -21,7 +20,7 @@ const Button = styled.span`
   border-radius: 50%;
   background-color: rgba(226, 148, 19, 0.95);
 `
-const LinkStyled = styled(Link)`
+const LinkStyled = styled.div`
   z-index: 1;
   position: fixed;
   bottom: 10px;
