@@ -1,8 +1,50 @@
 [
   {
+    "title": "Quinoa Rolle auf Wurzelsogu",
+    "steps": "steps",
+    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1578316835/fbbgicaa3mnkwlagndo1.jpg",
+    "id": "flp0zt",
+    "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
+  },
+  {
+    "title": "Pelmeni",
+    "steps": "steps",
+    "image": "http://res.cloudinary.com/dqhlhwdq7/image/upload/v1578317630/wp7bugjulwuttwsnir0b.jpg",
+    "id": "log6rt",
+    "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
+  },
+  {
+    "title": "Vanillemuffins mit Nougat Ganache",
+    "steps": "steps",
+    "image": "http://res.cloudinary.com/dqhlhwdq7/image/upload/v1578317661/hnygbgztkqtp1uaz259b.jpg",
+    "id": "2ezhl0",
+    "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
+  },
+  {
+    "title": "Asiatische Pilzpfanne auf Glasnudeln",
+    "steps": "steps",
+    "image": "http://res.cloudinary.com/dqhlhwdq7/image/upload/v1578317755/shaqkjekyypsgaqrerry.jpg",
+    "id": "4u78ol",
+    "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
+  },
+  {
+    "title": "Gemüseeintopf und Flusskrebs",
+    "steps": "steps",
+    "image": "http://res.cloudinary.com/dqhlhwdq7/image/upload/v1578318140/qa22xn7i1lddal9pqydh.jpg",
+    "id": "pluv5t",
+    "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
+  },
+  {
+    "title": "Teriyaki Pilze mit Prinzessböhnchen",
+    "steps": "steps",
+    "image": "http://res.cloudinary.com/dqhlhwdq7/image/upload/v1578318269/ehntmenoxo1cq2wjagds.jpg",
+    "id": "eug6t5",
+    "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
+  },
+  {
     "title": "Bohnen-Hummus mit Auberginen & Pinienkernen",
     "steps": "Backofen auf 200°C vorheizen. Auberginen waschen, grob würfeln und auf ein mit Backpapier belegtes Blech geben. Olivenöl, Paprikapulver, Piment, Salz und Pfeffer drüber geben und gut mischen. Ca. 20 Min. backen. In der Zwischenzeit das Hummus zubereiten: Knoblauch schälen und fein würfeln. Zitrone halbieren und Saft auspressen. Weiße Bohnen, Olivenöl, Knoblauch und Zitronensaft in einen Mixer geben und fein pürieren. Mit Salz, Pfeffer, Kreuzkümmel und Cayennepfeffer würzen und noch mal pürieren. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Petersilie waschen, trocken schütteln und hacken. Die fertig gebackenen Auberginen mit der Petersilie vermengen und mit dem Bohnenhummus und Pinienkernen servieren.",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576242132/c2fpuvvqmhc09jjv98eq.jpg",
+    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576244859/vzgkqy4gcjam7djyutb2.jpg",
     "id": "mkcqjd",
     "ingredients": [
       {
@@ -10,72 +52,20 @@
         "amount": "300",
         "unit": "g"
       },
-      {
-        "ingredientItem": "Zitrone",
-        "amount": "0,5",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Aubergine",
-        "amount": "1",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Pinienkerne",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Petersilie, n.B.",
-        "amount": "",
-        "unit": ""
-      },
-      {
-        "ingredientItem": "Pinienkerne",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Olivenöl",
-        "amount": "6",
-        "unit": "EL"
-      },
-      {
-        "ingredientItem": "Knoblauch",
-        "amount": "0,5",
-        "unit": "Zehen"
-      },
-      {
-        "ingredientItem": "Kreuzkümmel",
-        "amount": "0,5",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Cayennepfeffer",
-        "amount": "0,5",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Paprikapulver",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Piment",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Salz",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      },
-      {
-        "ingredientItem": "Pinienkerne"
-      }
+      { "ingredientItem": "Zitrone", "amount": "0.5", "unit": "Stk" },
+      { "ingredientItem": "Aubergine", "amount": "1", "unit": "Stk" },
+      { "ingredientItem": "Pinienkerne", "amount": "30", "unit": "g" },
+      { "ingredientItem": "Petersilie, n.B.", "amount": "", "unit": "" },
+      { "ingredientItem": "Pinienkerne", "amount": "30", "unit": "g" },
+      { "ingredientItem": "Olivenöl", "amount": "6", "unit": "EL" },
+      { "ingredientItem": "Knoblauch", "amount": "0.5", "unit": "Zehen" },
+      { "ingredientItem": "Kreuzkümmel", "amount": "0.5", "unit": "TL" },
+      { "ingredientItem": "Cayennepfeffer", "amount": "0.5", "unit": "TL" },
+      { "ingredientItem": "Paprikapulver", "amount": "1", "unit": "TL" },
+      { "ingredientItem": "Piment", "amount": "1", "unit": "TL" },
+      { "ingredientItem": "Salz", "amount": "30", "unit": "g" },
+      { "ingredientItem": "Pfeffer" },
+      { "ingredientItem": "Pinienkerne" }
     ]
   },
   {
@@ -84,534 +74,38 @@
     "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576242544/em7sja8gwtj2aazvhslm.jpg",
     "id": "mtih8z",
     "ingredients": [
-      {
-        "ingredientItem": "Pizzateig",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Mozzarella",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Ricotta",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Feta",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Eier",
-        "amount": "2"
-      },
-      {
-        "ingredientItem": "Butter",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Salz",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      }
+      { "ingredientItem": "Pizzateig", "amount": "200", "unit": "g" },
+      { "ingredientItem": "Mozzarella", "amount": "60", "unit": "g" },
+      { "ingredientItem": "Ricotta", "amount": "60", "unit": "g" },
+      { "ingredientItem": "Feta", "amount": "60", "unit": "g" },
+      { "ingredientItem": "Eier", "amount": "2" },
+      { "ingredientItem": "Butter", "amount": "1", "unit": "TL" },
+      { "ingredientItem": "Salz", "amount": "30", "unit": "g" },
+      { "ingredientItem": "Pfeffer" }
     ]
   },
   {
     "title": "Kürbisrisotto mit Serrano Chips & Cashews",
     "steps": "Backofen auf 200°C vorzeizen. Kürbis entkernen und in kleine Würfel schneiden. Schalotten klein würfeln, Knoblauch fein hacken. In einem breiten Topf Zwiebeln und Knoblauch kurz in Olivenöl anschwitzen. Den Reis hinzugeben und ca. 3 Min. mitdünsten. Umrühren, so dass jedes Reiskorn von Öl umschlossen ist und glasig wird. Reis schnell mit Weißwein ablöschen und reduzieren lassen. In einer Pfanne die Kürbiswürfel mit Thymian und Muskat ca. 12. Min. anbraten. Serranoscheiben uns Cashews auf ein Backblech verteilen und für ca. 10 Min. in den Ofen schieben. Der Serrano soll trocken und knusprig werden, die Cashews leicht braun. Sobald der Weißwein verdunstet ist, nach und nach mit Gemüsebrühe aufgießen und immer wieder reduzieren lassen. Ständig rühren! Mit Salz und Pfeffer abschmecken. Sobald die Kürbiswürfel in der Pfanne gar aber bissfest sind, beiseite stellen. Wenn der Reis gar ist und die Konsistenz allmählich erreicht ist, die Butter in Würfeln, den Kürbis, die Cashews und Parmesan hinzufügen und vermengen. Warm servieren, mit Kürbisöl beträufeln und schlemmern.",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576241252/ggemovevn2axxacy5w5l.jpg",
+    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576342173/n5uu12injraichnstrtb.jpg",
     "id": "ix6g3f",
     "ingredients": [
-      {
-        "ingredientItem": "Hokkaido",
-        "amount": "1",
-        "unit": "Stk."
-      },
-      {
-        "ingredientItem": "Risottoreis",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Parmesan",
-        "amount": "40",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Serrano Schinken",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Cashews, ungesalzen",
-        "amount": "40",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Gemüsebrühe",
-        "amount": "0,5",
-        "unit": "l"
-      },
-      {
-        "ingredientItem": "Weißwein",
-        "amount": "100",
-        "unit": "ml"
-      },
-      {
-        "ingredientItem": "Thymian",
-        "amount": "4",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Schalotte",
-        "amount": "1"
-      },
-      {
-        "ingredientItem": "Knoblauch",
-        "amount": "1",
-        "unit": "Zehe"
-      },
-      {
-        "ingredientItem": "Muskatnuss"
-      },
-      {
-        "ingredientItem": "Salz"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      },
-      {
-        "ingredientItem": "Butter",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Olivenöl",
-        "amount": "2",
-        "unit": "EL"
-      },
-      {
-        "ingredientItem": "Kürbisöl",
-        "amount": "1",
-        "unit": "TL"
-      }
-    ]
-  },
-  {
-    "title": "Bohnen-Hummus mit Auberginen & Pinienkernen",
-    "steps": "Backofen auf 200°C vorheizen. Auberginen waschen, grob würfeln und auf ein mit Backpapier belegtes Blech geben. Olivenöl, Paprikapulver, Piment, Salz und Pfeffer drüber geben und gut mischen. Ca. 20 Min. backen. In der Zwischenzeit das Hummus zubereiten: Knoblauch schälen und fein würfeln. Zitrone halbieren und Saft auspressen. Weiße Bohnen, Olivenöl, Knoblauch und Zitronensaft in einen Mixer geben und fein pürieren. Mit Salz, Pfeffer, Kreuzkümmel und Cayennepfeffer würzen und noch mal pürieren. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Petersilie waschen, trocken schütteln und hacken. Die fertig gebackenen Auberginen mit der Petersilie vermengen und mit dem Bohnenhummus und Pinienkernen servieren.",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576242132/c2fpuvvqmhc09jjv98eq.jpg",
-    "id": "mkdqjd",
-    "ingredients": [
-      {
-        "ingredientItem": "weiße Bohnen (Dose od. Glas)",
-        "amount": "300",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Zitrone",
-        "amount": "0,5",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Aubergine",
-        "amount": "1",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Pinienkerne",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Petersilie, n.B.",
-        "amount": "",
-        "unit": ""
-      },
-      {
-        "ingredientItem": "Pinienkerne",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Olivenöl",
-        "amount": "6",
-        "unit": "EL"
-      },
-      {
-        "ingredientItem": "Knoblauch",
-        "amount": "0,5",
-        "unit": "Zehen"
-      },
-      {
-        "ingredientItem": "Kreuzkümmel",
-        "amount": "0,5",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Cayennepfeffer",
-        "amount": "0,5",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Paprikapulver",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Piment",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Salz",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      },
-      {
-        "ingredientItem": "Pinienkerne"
-      }
-    ]
-  },
-  {
-    "title": "Khachapuri",
-    "steps": "Backofen auf 200°C vorheizen. Mozzarella reiben. Ricotta, Mozzarella und zerkrümelten Feta vermengen. Mit Salz und Pfeffer abschmecken und zur Seite stellen. Den Teig zu einem Kreis mit einem Durchmesser von ca. 20 cm ausrollen. Die gegenüberliegenden Seiten zur Mitte einrollen, sodass ein \"Boot\" entsteht. Danach die Enden zusammen drücken. Khachapuri mit Käsemischung füllen. Ei mit etwas Wasser verquirlen und damit den Teig bepinseln. Khachapuri ca. 15 Min. backen, bis der Teig gold-braun wird. In die Mitte jedes Khachapuri eine Mulde drücken und ein Ei hineingeben. Butter in Stücke darauf verteilen und Khachapuri weitere 5-6 Min. backen. Nach Wunsch mit Kräutern bestreuen und servieren",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576242544/em7sja8gwtj2aazvhslm.jpg",
-    "id": "mtihrt",
-    "ingredients": [
-      {
-        "ingredientItem": "Pizzateig",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Mozzarella",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Ricotta",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Feta",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Eier",
-        "amount": "2"
-      },
-      {
-        "ingredientItem": "Butter",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Salz",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      }
-    ]
-  },
-  {
-    "title": "Kürbisrisotto mit Serrano Chips & Cashews",
-    "steps": "Backofen auf 200°C vorzeizen. Kürbis entkernen und in kleine Würfel schneiden. Schalotten klein würfeln, Knoblauch fein hacken. In einem breiten Topf Zwiebeln und Knoblauch kurz in Olivenöl anschwitzen. Den Reis hinzugeben und ca. 3 Min. mitdünsten. Umrühren, so dass jedes Reiskorn von Öl umschlossen ist und glasig wird. Reis schnell mit Weißwein ablöschen und reduzieren lassen. In einer Pfanne die Kürbiswürfel mit Thymian und Muskat ca. 12. Min. anbraten. Serranoscheiben uns Cashews auf ein Backblech verteilen und für ca. 10 Min. in den Ofen schieben. Der Serrano soll trocken und knusprig werden, die Cashews leicht braun. Sobald der Weißwein verdunstet ist, nach und nach mit Gemüsebrühe aufgießen und immer wieder reduzieren lassen. Ständig rühren! Mit Salz und Pfeffer abschmecken. Sobald die Kürbiswürfel in der Pfanne gar aber bissfest sind, beiseite stellen. Wenn der Reis gar ist und die Konsistenz allmählich erreicht ist, die Butter in Würfeln, den Kürbis, die Cashews und Parmesan hinzufügen und vermengen. Warm servieren, mit Kürbisöl beträufeln und schlemmern.",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576241252/ggemovevn2axxacy5w5l.jpg",
-    "id": "i4dg3f",
-    "ingredients": [
-      {
-        "ingredientItem": "Hokkaido",
-        "amount": "1",
-        "unit": "Stk."
-      },
-      {
-        "ingredientItem": "Risottoreis",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Parmesan",
-        "amount": "40",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Serrano Schinken",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Cashews, ungesalzen",
-        "amount": "40",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Gemüsebrühe",
-        "amount": "0,5",
-        "unit": "l"
-      },
-      {
-        "ingredientItem": "Weißwein",
-        "amount": "100",
-        "unit": "ml"
-      },
-      {
-        "ingredientItem": "Thymian",
-        "amount": "4",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Schalotte",
-        "amount": "1"
-      },
-      {
-        "ingredientItem": "Knoblauch",
-        "amount": "1",
-        "unit": "Zehe"
-      },
-      {
-        "ingredientItem": "Muskatnuss"
-      },
-      {
-        "ingredientItem": "Salz"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      },
-      {
-        "ingredientItem": "Butter",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Olivenöl",
-        "amount": "2",
-        "unit": "EL"
-      },
-      {
-        "ingredientItem": "Kürbisöl",
-        "amount": "1",
-        "unit": "TL"
-      }
-    ]
-  },
-  {
-    "title": "Bohnen-Hummus mit Auberginen & Pinienkernen",
-    "steps": "Backofen auf 200°C vorheizen. Auberginen waschen, grob würfeln und auf ein mit Backpapier belegtes Blech geben. Olivenöl, Paprikapulver, Piment, Salz und Pfeffer drüber geben und gut mischen. Ca. 20 Min. backen. In der Zwischenzeit das Hummus zubereiten: Knoblauch schälen und fein würfeln. Zitrone halbieren und Saft auspressen. Weiße Bohnen, Olivenöl, Knoblauch und Zitronensaft in einen Mixer geben und fein pürieren. Mit Salz, Pfeffer, Kreuzkümmel und Cayennepfeffer würzen und noch mal pürieren. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Petersilie waschen, trocken schütteln und hacken. Die fertig gebackenen Auberginen mit der Petersilie vermengen und mit dem Bohnenhummus und Pinienkernen servieren.",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576242132/c2fpuvvqmhc09jjv98eq.jpg",
-    "id": "mkkljd",
-    "ingredients": [
-      {
-        "ingredientItem": "weiße Bohnen (Dose od. Glas)",
-        "amount": "300",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Zitrone",
-        "amount": "0,5",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Aubergine",
-        "amount": "1",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Pinienkerne",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Petersilie, n.B.",
-        "amount": "",
-        "unit": ""
-      },
-      {
-        "ingredientItem": "Pinienkerne",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Olivenöl",
-        "amount": "6",
-        "unit": "EL"
-      },
-      {
-        "ingredientItem": "Knoblauch",
-        "amount": "0,5",
-        "unit": "Zehen"
-      },
-      {
-        "ingredientItem": "Kreuzkümmel",
-        "amount": "0,5",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Cayennepfeffer",
-        "amount": "0,5",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Paprikapulver",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Piment",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Salz",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      },
-      {
-        "ingredientItem": "Pinienkerne"
-      }
-    ]
-  },
-  {
-    "title": "Khachapuri",
-    "steps": "Backofen auf 200°C vorheizen. Mozzarella reiben. Ricotta, Mozzarella und zerkrümelten Feta vermengen. Mit Salz und Pfeffer abschmecken und zur Seite stellen. Den Teig zu einem Kreis mit einem Durchmesser von ca. 20 cm ausrollen. Die gegenüberliegenden Seiten zur Mitte einrollen, sodass ein \"Boot\" entsteht. Danach die Enden zusammen drücken. Khachapuri mit Käsemischung füllen. Ei mit etwas Wasser verquirlen und damit den Teig bepinseln. Khachapuri ca. 15 Min. backen, bis der Teig gold-braun wird. In die Mitte jedes Khachapuri eine Mulde drücken und ein Ei hineingeben. Butter in Stücke darauf verteilen und Khachapuri weitere 5-6 Min. backen. Nach Wunsch mit Kräutern bestreuen und servieren",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576242544/em7sja8gwtj2aazvhslm.jpg",
-    "id": "mt7z8z",
-    "ingredients": [
-      {
-        "ingredientItem": "Pizzateig",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Mozzarella",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Ricotta",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Feta",
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Eier",
-        "amount": "2"
-      },
-      {
-        "ingredientItem": "Butter",
-        "amount": "1",
-        "unit": "TL"
-      },
-      {
-        "ingredientItem": "Salz",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      }
-    ]
-  },
-  {
-    "title": "Kürbisrisotto mit Serrano Chips & Cashews",
-    "steps": "Backofen auf 200°C vorzeizen. Kürbis entkernen und in kleine Würfel schneiden. Schalotten klein würfeln, Knoblauch fein hacken. In einem breiten Topf Zwiebeln und Knoblauch kurz in Olivenöl anschwitzen. Den Reis hinzugeben und ca. 3 Min. mitdünsten. Umrühren, so dass jedes Reiskorn von Öl umschlossen ist und glasig wird. Reis schnell mit Weißwein ablöschen und reduzieren lassen. In einer Pfanne die Kürbiswürfel mit Thymian und Muskat ca. 12. Min. anbraten. Serranoscheiben uns Cashews auf ein Backblech verteilen und für ca. 10 Min. in den Ofen schieben. Der Serrano soll trocken und knusprig werden, die Cashews leicht braun. Sobald der Weißwein verdunstet ist, nach und nach mit Gemüsebrühe aufgießen und immer wieder reduzieren lassen. Ständig rühren! Mit Salz und Pfeffer abschmecken. Sobald die Kürbiswürfel in der Pfanne gar aber bissfest sind, beiseite stellen. Wenn der Reis gar ist und die Konsistenz allmählich erreicht ist, die Butter in Würfeln, den Kürbis, die Cashews und Parmesan hinzufügen und vermengen. Warm servieren, mit Kürbisöl beträufeln und schlemmern.",
-    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1576241252/ggemovevn2axxacy5w5l.jpg",
-    "id": "ixjg3f",
-    "ingredients": [
-      {
-        "ingredientItem": "Hokkaido",
-        "amount": "1",
-        "unit": "Stk."
-      },
-      {
-        "ingredientItem": "Risottoreis",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Parmesan",
-        "amount": "40",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Serrano Schinken",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Cashews, ungesalzen",
-        "amount": "40",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Gemüsebrühe",
-        "amount": "0,5",
-        "unit": "l"
-      },
-      {
-        "ingredientItem": "Weißwein",
-        "amount": "100",
-        "unit": "ml"
-      },
-      {
-        "ingredientItem": "Thymian",
-        "amount": "4",
-        "unit": "Stk"
-      },
-      {
-        "ingredientItem": "Schalotte",
-        "amount": "1"
-      },
-      {
-        "ingredientItem": "Knoblauch",
-        "amount": "1",
-        "unit": "Zehe"
-      },
-      {
-        "ingredientItem": "Muskatnuss"
-      },
-      {
-        "ingredientItem": "Salz"
-      },
-      {
-        "ingredientItem": "Pfeffer"
-      },
-      {
-        "ingredientItem": "Butter",
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "ingredientItem": "Olivenöl",
-        "amount": "2",
-        "unit": "EL"
-      },
-      {
-        "ingredientItem": "Kürbisöl",
-        "amount": "1",
-        "unit": "TL"
-      }
+      { "ingredientItem": "Hokkaido", "amount": "1", "unit": "Stk." },
+      { "ingredientItem": "Risottoreis", "amount": "200", "unit": "g" },
+      { "ingredientItem": "Parmesan", "amount": "40", "unit": "g" },
+      { "ingredientItem": "Serrano Schinken", "amount": "30", "unit": "g" },
+      { "ingredientItem": "Cashews, ungesalzen", "amount": "40", "unit": "g" },
+      { "ingredientItem": "Gemüsebrühe", "amount": "0.5", "unit": "l" },
+      { "ingredientItem": "Weißwein", "amount": "100", "unit": "ml" },
+      { "ingredientItem": "Thymian", "amount": "4", "unit": "Stk" },
+      { "ingredientItem": "Schalotte", "amount": "1" },
+      { "ingredientItem": "Knoblauch", "amount": "1", "unit": "Zehe" },
+      { "ingredientItem": "Muskatnuss" },
+      { "ingredientItem": "Salz" },
+      { "ingredientItem": "Pfeffer" },
+      { "ingredientItem": "Butter", "amount": "30", "unit": "g" },
+      { "ingredientItem": "Olivenöl", "amount": "2", "unit": "EL" },
+      { "ingredientItem": "Kürbisöl", "amount": "1", "unit": "TL" }
     ]
   }
 ]

@@ -24,6 +24,7 @@ export default function Form({
   onIngredientsChange,
   buttonText,
   linkTo,
+  action,
 }) {
   const unitOptions = [
     'mg',
@@ -71,7 +72,7 @@ export default function Form({
 
         <AddPhoto image={image} setImage={onImageChange}></AddPhoto>
 
-        <FormStyled onSubmit={handleSubmit} action="/">
+        <FormStyled onSubmit={handleSubmit} action={action} autoComplete="off">
           <LabelStyled>
             <InputStyled
               onChange={onTitleChange}
