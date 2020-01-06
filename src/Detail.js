@@ -5,6 +5,7 @@ import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
 import defaultImg from './assets/img/default-img-detail2.jpg'
 import FabButton from './FabButton'
+import Alarm from './Alarm'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -18,6 +19,7 @@ export default function Detail({ recipes }) {
 
   return (
     <>
+      {showAlarm ? <Alarm onClose={() => toggleAlarm()} /> : null}
       <Nav>
         <Link to="/">
           <img src={back} alt="zurück" />
@@ -51,7 +53,6 @@ export default function Detail({ recipes }) {
 
           <Content>
             {showIngredients ? renderIngredients() : renderSteps()}
-            {showAlarm ? <AlarmTry></AlarmTry> : null}
           </Content>
         </Wrapper>
       </Container>
@@ -90,17 +91,7 @@ export default function Detail({ recipes }) {
   function toggleAlarm() {
     setShowAlarm(!showAlarm)
   }
-
-  function renderAlarm() {
-    return <AlarmTry></AlarmTry>
-  }
 }
-
-const AlarmTry = styled.div`
-  width: 100px;
-  height: 100px;
-  background-color: skyblue;
-`
 
 const Container = styled.div`
   position: absolute;
