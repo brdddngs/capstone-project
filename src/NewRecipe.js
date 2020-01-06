@@ -22,6 +22,7 @@ export default function NewRecipe({ headline, onSubmit }) {
       headline={headline}
       onSubmit={onSubmit}
       buttonText="Rezept hinzufügen"
+      action="/"
       linkTo="/"
     />
   )
