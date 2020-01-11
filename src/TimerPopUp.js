@@ -4,16 +4,18 @@ import close from './assets/close.svg'
 import plus from './assets/add-orange.svg'
 import minus from './assets/minus-orange.svg'
 
-export default function Alarm({ onClick }) {
+export default function Alarm({ onClose, onStart }) {
   const [minutes, setMinutes] = useState('20')
   const [seconds, setSeconds] = useState('00')
   const min = Number(minutes)
   const sec = Number(seconds)
   const [counter, setCounter] = useState(min * 60 + sec)
-  const [counting, setCounting] = useState(true)
+  const [countUp, setCountUp] = useState(true)
+  const [countDown, setCountDown] = useState(true)
 
   useEffect(() => {
-    setCounting(counter === 0 ? false : true)
+    setCountDown(counter === 0 ? false : true)
+    setCountUp(counter >= 7200 ? false : true)
     const timeDecimal = counter / 60
     const timeList = Array.from(timeDecimal.toString())
     if (timeList.includes('.')) {
@@ -26,73 +28,55 @@ export default function Alarm({ onClick }) {
       setMinutes(min)
       setSeconds('00')
     }
-  }, [counter, seconds, minutes])
+  }, [countUp, countDown, counter, seconds, minutes])
 
   return (
     <Darkscreen>
       <Popup>
         <Top>
-          <img src={close} alt="" onClick={onClick} />
+          <img src={close} alt="" onClick={onClose} />
         </Top>
 
         <Wrapper>
-          <img src={plus} alt="" onClick={() => setCounter(counter + 60)} />
+          <img
+            src={plus}
+            alt=""
+            onClick={() => setCounter(countUp ? addTime() : counter)}
+          />
           <Time>
             {minutes}:{seconds}
           </Time>
           <img
             src={minus}
             alt=""
-            onClick={() => setCounter(counting ? counter - 60 : counter)}
+            onClick={() => setCounter(countDown ? removeTime() : counter)}
           />
         </Wrapper>
         <TimeUnit>Minuten</TimeUnit>
-        <Button>Timer starten</Button>
+        <Button onClick={() => onStart({ counter })}>Timer starten</Button>
       </Popup>
     </Darkscreen>
   )
 
-  /*function addTime() {
-    handleTime()
-    const min = Number(minutes)
+  function addTime() {
     if (min < 10) {
-      setCounter(counter + 30)
-    } else if (min < 20) {
-      setCounter(counter + 60)
-    } else {
-      setCounter(counter + 300)
+      return counter + 30
     }
-    console.log(counter, minutes + ':' + seconds)
+    if (min < 25) {
+      return counter + 60
+    }
+    return counter + 300
   }
 
   function removeTime() {
-    handleTime()
-    const min = Number(minutes)
     if (min < 10) {
-      setCounter(counter - 30)
-    } else if (min < 20) {
-      setCounter(counter - 60)
-    } else {
-      setCounter(counter - 300)
+      return counter - 30
     }
-    console.log(counter, minutes + ':' + seconds)
+    if (min < 25) {
+      return counter - 60
+    }
+    return counter - 300
   }
-
-  function handleTime(newCounter) {
-    setCounter(newCounter)
-    const timeDecimal = counter / 60
-    const timeList = Array.from(timeDecimal.toString())
-    if (timeList.includes('.')) {
-      const index = timeList.findIndex(item => item === '.')
-      const min = timeList.slice(0, index).join('')
-      setMinutes(min)
-      setSeconds('30')
-    } else {
-      const min = timeList.join('')
-      setMinutes(min)
-      setSeconds('00')
-    }
-  }*/
 }
 
 const Darkscreen = styled.div`
@@ -129,9 +113,9 @@ const Top = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
-  width: 80%;
+  width: 75%;
 `
 
 const Time = styled.div`

@@ -16,10 +16,13 @@ export default function Detail({ recipes }) {
   const [showSteps, setShowSteps] = useState(false)
 
   const [showPopUp, setShowPopUp] = useState(false)
+  const [time, setTime] = useState(0)
 
   return (
     <>
-      {showPopUp ? <PopUp onClick={() => togglePopUp()} /> : null}
+      {showPopUp ? (
+        <PopUp onClose={() => togglePopUp()} onStart={startTimer} />
+      ) : null}
       <Nav>
         <Link to="/">
           <img src={back} alt="zurück" />
@@ -90,6 +93,12 @@ export default function Detail({ recipes }) {
 
   function togglePopUp() {
     setShowPopUp(!showPopUp)
+  }
+
+  function startTimer({ counter }) {
+    setShowPopUp(!showPopUp)
+    setTime(counter)
+    console.log(time)
   }
 }
 
