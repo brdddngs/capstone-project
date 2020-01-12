@@ -6,6 +6,7 @@ import edit from './assets/edit.svg'
 import defaultImg from './assets/img/default-img-detail2.jpg'
 import FabButton from './FabButton'
 import PopUp from './TimerPopUp'
+import Timer from './Timer'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -16,13 +17,20 @@ export default function Detail({ recipes }) {
   const [showSteps, setShowSteps] = useState(false)
 
   const [showPopUp, setShowPopUp] = useState(false)
-  const [time, setTime] = useState(0)
+  const [time, setTime] = useState(1200)
+  const [showTimer, setShowTimer] = useState(true)
 
+  console.log(time)
   return (
     <>
       {showPopUp ? (
-        <PopUp onClose={() => togglePopUp()} onStart={startTimer} />
+        <PopUp
+          onClose={() => togglePopUp()}
+          onStart={counter => setTime(counter)}
+          onCounting={() => onCounting()}
+        />
       ) : null}
+      {showTimer ? <Timer time={time}></Timer> : null}
       <Nav>
         <Link to="/">
           <img src={back} alt="zurück" />
@@ -95,10 +103,9 @@ export default function Detail({ recipes }) {
     setShowPopUp(!showPopUp)
   }
 
-  function startTimer({ counter }) {
-    setShowPopUp(!showPopUp)
-    setTime(counter)
-    console.log(time)
+  function onCounting() {
+    togglePopUp()
+    setShowTimer(!showTimer)
   }
 }
 

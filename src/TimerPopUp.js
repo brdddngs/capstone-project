@@ -4,7 +4,7 @@ import close from './assets/close.svg'
 import plus from './assets/add-orange.svg'
 import minus from './assets/minus-orange.svg'
 
-export default function Alarm({ onClose, onStart }) {
+export default function Alarm({ onClose, onStart, onCounting }) {
   const [minutes, setMinutes] = useState('20')
   const [seconds, setSeconds] = useState('00')
   const min = Number(minutes)
@@ -53,7 +53,9 @@ export default function Alarm({ onClose, onStart }) {
           />
         </Wrapper>
         <TimeUnit>Minuten</TimeUnit>
-        <Button onClick={() => onStart({ counter })}>Timer starten</Button>
+        <Button onClick={() => onStart(counter) + onCounting()}>
+          Timer starten
+        </Button>
       </Popup>
     </Darkscreen>
   )
