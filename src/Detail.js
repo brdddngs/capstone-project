@@ -18,9 +18,8 @@ export default function Detail({ recipes }) {
 
   const [showPopUp, setShowPopUp] = useState(false)
   const [time, setTime] = useState(1200)
-  const [showTimer, setShowTimer] = useState(true)
+  const [showTimer, setShowTimer] = useState(false)
 
-  console.log(time)
   return (
     <>
       {showPopUp ? (
@@ -30,7 +29,9 @@ export default function Detail({ recipes }) {
           onCounting={() => onCounting()}
         />
       ) : null}
-      {showTimer ? <Timer time={time}></Timer> : null}
+      {showTimer ? (
+        <Timer time={time} onClose={() => setShowTimer(!setShowTimer)}></Timer>
+      ) : null}
       <Nav>
         <Link to="/">
           <img src={back} alt="zurück" />
