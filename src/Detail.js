@@ -181,6 +181,7 @@ const TabBar = styled.nav`
   margin: 20px 0 0;
   &::after {
     content: '';
+    z-index: 1;
     height: 16px;
     width: 100%;
     background: linear-gradient(#fff, rgba(255, 255, 255, 0));
