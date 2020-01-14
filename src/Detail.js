@@ -5,7 +5,8 @@ import back from './assets/arrow_back.svg'
 import edit from './assets/edit.svg'
 import defaultImg from './assets/img/default-img-detail2.jpg'
 import FabButton from './FabButton'
-import Alarm from './Alarm'
+import PopUp from './TimerPopUp'
+import Timer from './Timer'
 
 export default function Detail({ recipes }) {
   const { id } = useParams()
@@ -15,11 +16,22 @@ export default function Detail({ recipes }) {
   const [showIngredients, setShowIngredients] = useState(true)
   const [showSteps, setShowSteps] = useState(false)
 
-  const [showAlarm, setShowAlarm] = useState(false)
+  const [showPopUp, setShowPopUp] = useState(false)
+  const [time, setTime] = useState(1200)
+  const [showTimer, setShowTimer] = useState(false)
 
   return (
     <>
-      {showAlarm ? <Alarm onClose={() => toggleAlarm()} /> : null}
+      {showPopUp ? (
+        <PopUp
+          onClose={() => togglePopUp()}
+          onStart={counter => setTime(counter)}
+          onCounting={() => onCounting()}
+        />
+      ) : null}
+      {showTimer ? (
+        <Timer time={time} onClose={() => setShowTimer(!setShowTimer)}></Timer>
+      ) : null}
       <Nav>
         <Link to="/">
           <img src={back} alt="zurück" />
@@ -35,7 +47,7 @@ export default function Detail({ recipes }) {
           <Image src={image === '' ? defaultImg : image} />
         </Header>
         <Wrapper>
-          <FabButton asset="add_alarm" onClick={() => toggleAlarm()} />
+          <FabButton asset="add_alarm" onClick={() => togglePopUp()} />
           <TabBar>
             <Tab
               className={showIngredients ? 'active' : ''}
@@ -88,8 +100,13 @@ export default function Detail({ recipes }) {
     return <Steps>{steps}</Steps>
   }
 
-  function toggleAlarm() {
-    setShowAlarm(!showAlarm)
+  function togglePopUp() {
+    setShowPopUp(!showPopUp)
+  }
+
+  function onCounting() {
+    togglePopUp()
+    setShowTimer(!showTimer)
   }
 }
 
