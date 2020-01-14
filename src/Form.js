@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Grid from './Grid'
-import close from './assets/close.svg'
 import add from './assets/add.svg'
 import minus from './assets/minus.svg'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import AddPhoto from './AddPhoto'
 
@@ -61,123 +58,95 @@ export default function Form({
   }
 
   return (
-    <Grid>
-      <Nav>
-        <Link to={linkTo}>
-          <img src={close} alt="close" />
-        </Link>
-      </Nav>
-      <Container>
-        <Title>{headline}</Title>
+    <Container>
+      <Title>{headline}</Title>
 
-        <AddPhoto image={image} setImage={onImageChange}></AddPhoto>
+      <AddPhoto image={image} setImage={onImageChange}></AddPhoto>
 
-        <FormStyled onSubmit={handleSubmit} action={action} autoComplete="off">
-          <LabelStyled>
-            <InputStyled
-              onChange={onTitleChange}
-              value={title}
-              name="title"
-              placeholder="Titel"
-            />
-          </LabelStyled>
-
-          <Subtitle>Zutaten</Subtitle>
-
-          {ingredients.map((ingredient, index) => {
-            const { ingredientItem = '', amount = '', unit = '' } = ingredient
-
-            function updateInput(event) {
-              const inputElName = event.target.name
-              const inputData = ingredients[index]
-
-              onIngredientsChange([
-                ...ingredients.slice(0, index),
-                { ...inputData, [inputElName]: event.target.value },
-                ...ingredients.slice(index + 1),
-              ])
-            }
-
-            function deleteInput() {
-              onIngredientsChange([
-                ...ingredients.slice(0, index),
-                ...ingredients.slice(index + 1),
-              ])
-            }
-
-            return (
-              <Wrapper key={index}>
-                <ButtonCircle onClick={deleteInput} className="small">
-                  <img src={minus} alt="minus" />
-                </ButtonCircle>
-                <InputStyled
-                  name="ingredientItem"
-                  value={ingredientItem}
-                  onChange={updateInput}
-                  type="text"
-                  placeholder="Zutat"
-                />
-                <InputStyled
-                  name="amount"
-                  value={amount}
-                  onChange={updateInput}
-                  type="text"
-                  placeholder="Anzahl"
-                />
-                <SelectStyled name="unit" value={unit} onChange={updateInput}>
-                  <option hidden>Einheit</option>
-                  {unitOptions.map((option, index) => {
-                    return (
-                      <option value={option} key={index}>
-                        {option}
-                      </option>
-                    )
-                  })}
-                </SelectStyled>
-              </Wrapper>
-            )
-          })}
-          <ButtonCircle onClick={addNewInputs}>
-            <img src={add} alt="add" />
-          </ButtonCircle>
-
-          <Subtitle>Anleitung</Subtitle>
-
-          <TextareaStyled
-            name="steps"
-            placeholder="Schritt für Schritt ..."
-            rows="6"
-            value={steps}
-            onChange={onStepsChange}
+      <FormStyled onSubmit={handleSubmit} action={action} autoComplete="off">
+        <LabelStyled>
+          <InputStyled
+            onChange={onTitleChange}
+            value={title}
+            name="title"
+            placeholder="Titel"
           />
+        </LabelStyled>
 
-          <Button type="submit">{buttonText}</Button>
-        </FormStyled>
-      </Container>
-    </Grid>
+        <Subtitle>Zutaten</Subtitle>
+
+        {ingredients.map((ingredient, index) => {
+          const { ingredientItem = '', amount = '', unit = '' } = ingredient
+
+          function updateInput(event) {
+            const inputElName = event.target.name
+            const inputData = ingredients[index]
+
+            onIngredientsChange([
+              ...ingredients.slice(0, index),
+              { ...inputData, [inputElName]: event.target.value },
+              ...ingredients.slice(index + 1),
+            ])
+          }
+
+          function deleteInput() {
+            onIngredientsChange([
+              ...ingredients.slice(0, index),
+              ...ingredients.slice(index + 1),
+            ])
+          }
+
+          return (
+            <Wrapper key={index}>
+              <ButtonCircle onClick={deleteInput} className="small">
+                <img src={minus} alt="minus" />
+              </ButtonCircle>
+              <InputStyled
+                name="ingredientItem"
+                value={ingredientItem}
+                onChange={updateInput}
+                type="text"
+                placeholder="Zutat"
+              />
+              <InputStyled
+                name="amount"
+                value={amount}
+                onChange={updateInput}
+                type="text"
+                placeholder="Anzahl"
+              />
+              <SelectStyled name="unit" value={unit} onChange={updateInput}>
+                <option hidden>Einheit</option>
+                {unitOptions.map((option, index) => {
+                  return (
+                    <option value={option} key={index}>
+                      {option}
+                    </option>
+                  )
+                })}
+              </SelectStyled>
+            </Wrapper>
+          )
+        })}
+        <ButtonCircle onClick={addNewInputs}>
+          <img src={add} alt="add" />
+        </ButtonCircle>
+
+        <Subtitle>Anleitung</Subtitle>
+
+        <TextareaStyled
+          name="steps"
+          placeholder="Schritt für Schritt ..."
+          rows="6"
+          value={steps}
+          onChange={onStepsChange}
+        />
+
+        <Button type="submit">{buttonText}</Button>
+      </FormStyled>
+    </Container>
   )
 }
-
-const Nav = styled.nav`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-  background-color: #fff;
-  &::after {
-    content: '';
-    height: 11px;
-    width: 100%;
-    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    z-index: 2;
-  }
-`
 
 const Container = styled.section`
   width: 100%;
