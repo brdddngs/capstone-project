@@ -20,7 +20,6 @@ export default function Form({
   ingredients,
   onIngredientsChange,
   buttonText,
-  linkTo,
   action,
 }) {
   const unitOptions = [
@@ -143,6 +142,9 @@ export default function Form({
         />
 
         <Button type="submit">{buttonText}</Button>
+        {headline === 'Rezept bearbeiten' ? (
+          <TextButton>Rezept löschen</TextButton>
+        ) : null}
       </FormStyled>
     </Container>
   )
@@ -268,6 +270,15 @@ const Button = styled.button`
   &:disabled {
     background-color: #a5a5a5;
   }
+`
+
+const TextButton = styled.button`
+  all: unset;
+  box-sizing: border-box;
+  text-align: center;
+  color: #e02020;
+  font-weight: 600;
+  margin: 0 0 32px;
 `
 
 FormStyled.propTypes = {
