@@ -124,12 +124,7 @@ export default function Form({
                   type="text"
                   placeholder="Anzahl"
                 />
-                <SelectStyled
-                  name="unit"
-                  value={unit}
-                  onChange={updateInput}
-                  placeholder="Einheit"
-                >
+                <SelectStyled name="unit" value={unit} onChange={updateInput}>
                   <option hidden>Einheit</option>
                   {unitOptions.map((option, index) => {
                     return (
@@ -267,9 +262,6 @@ const SelectStyled = styled.select`
   padding: 8px 6px;
   border-bottom: 2px solid #a5a5a5;
   color: #313131;
-  &::placeholder {
-    color: #a5a5a5;
-  }
   &:focus {
     border-bottom: 2px solid #e29413;
     background-color: rgba(226, 147, 19, 0.1);

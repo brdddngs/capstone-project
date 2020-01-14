@@ -29,13 +29,13 @@ export default function Overview({ recipes, headline }) {
       </Header>
       <TileContainer>
         {recipesFiltered.map(recipe => (
-          <Link to={`/detail/${recipe.id}`} key={recipe.id}>
-            <Tile>
+          <Tile key={recipe.id}>
+            <Link to={`/detail/${recipe.id}`}>
               <Title>{recipe.title}</Title>
               <Gradient />
               <Image src={recipe.image === '' ? defaultImg : recipe.image} />
-            </Tile>
-          </Link>
+            </Link>
+          </Tile>
         ))}
       </TileContainer>
     </Grid>
@@ -141,6 +141,9 @@ const Tile = styled.section`
   width: 160px;
   height: 160px;
   background-color: rgb(226, 148, 19);
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
 `
 
 const Gradient = styled.div`
