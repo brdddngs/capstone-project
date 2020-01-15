@@ -57,7 +57,7 @@ export default function Form({
   }
 
   return (
-    <Container>
+    <>
       <Title>{headline}</Title>
 
       <AddPhoto image={image} setImage={onImageChange}></AddPhoto>
@@ -142,20 +142,10 @@ export default function Form({
         />
 
         <Button type="submit">{buttonText}</Button>
-        {headline === 'Rezept bearbeiten' ? (
-          <TextButton>Rezept löschen</TextButton>
-        ) : null}
       </FormStyled>
-    </Container>
+    </>
   )
 }
-
-const Container = styled.section`
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  padding: 0 20px;
-`
 
 const Title = styled.h1`
   font-size: 1.375rem;
@@ -270,15 +260,6 @@ const Button = styled.button`
   &:disabled {
     background-color: #a5a5a5;
   }
-`
-
-const TextButton = styled.button`
-  all: unset;
-  box-sizing: border-box;
-  text-align: center;
-  color: #e02020;
-  font-weight: 600;
-  margin: 0 0 32px;
 `
 
 FormStyled.propTypes = {

@@ -21,20 +21,22 @@ export default function NewRecipe({ headline, onSubmit }) {
         </Link>
       </Nav>
 
-      <Form
-        title={title}
-        steps={steps}
-        image={image}
-        ingredients={ingredients}
-        onTitleChange={event => setTitle(event.target.value)}
-        onStepsChange={event => setSteps(event.target.value)}
-        onImageChange={image => setImage(image)}
-        onIngredientsChange={setIngredients}
-        headline={headline}
-        onSubmit={onSubmit}
-        buttonText="Rezept hinzufügen"
-        action="/"
-      />
+      <Container>
+        <Form
+          title={title}
+          steps={steps}
+          image={image}
+          ingredients={ingredients}
+          onTitleChange={event => setTitle(event.target.value)}
+          onStepsChange={event => setSteps(event.target.value)}
+          onImageChange={image => setImage(image)}
+          onIngredientsChange={setIngredients}
+          headline={headline}
+          onSubmit={onSubmit}
+          buttonText="Rezept hinzufügen"
+          action="/"
+        />
+      </Container>
     </Grid>
   )
 }
@@ -58,4 +60,10 @@ const Nav = styled.nav`
     left: 0;
     z-index: 2;
   }
+`
+const Container = styled.section`
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 20px;
 `

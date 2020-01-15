@@ -4,10 +4,9 @@ import styled from 'styled-components/macro'
 import Grid from './Grid'
 import close from './assets/close.svg'
 import { Link } from 'react-router-dom'
-
 import Form from './Form'
 
-export default function EditRecipe({ headline, recipes, onSubmit }) {
+export default function EditRecipe({ headline, recipes, onEdit, onDelete }) {
   const { id } = useParams()
   const recipe = recipes.find(recipe => recipe.id === id)
 
@@ -24,21 +23,26 @@ export default function EditRecipe({ headline, recipes, onSubmit }) {
         </Link>
       </Nav>
 
-      <Form
-        id={id}
-        title={title}
-        steps={steps}
-        image={image}
-        ingredients={ingredients}
-        onTitleChange={event => setTitle(event.target.value)}
-        onStepsChange={event => setSteps(event.target.value)}
-        onImageChange={image => setImage(image)}
-        onIngredientsChange={setIngredients}
-        headline={headline}
-        onSubmit={onSubmit}
-        buttonText="Rezept ändern"
-        action={`/detail/${id}`}
-      />
+      <Container>
+        <Form
+          id={id}
+          title={title}
+          steps={steps}
+          image={image}
+          ingredients={ingredients}
+          onTitleChange={event => setTitle(event.target.value)}
+          onStepsChange={event => setSteps(event.target.value)}
+          onImageChange={image => setImage(image)}
+          onIngredientsChange={setIngredients}
+          headline={headline}
+          onSubmit={onEdit}
+          buttonText="Rezept ändern"
+          action={`/detail/${id}`}
+        />
+        <TextButton to="/" onClick={() => onDelete(recipe)}>
+          Rezept löschen
+        </TextButton>
+      </Container>
     </Grid>
   )
 }
@@ -62,4 +66,21 @@ const Nav = styled.nav`
     left: 0;
     z-index: 2;
   }
+`
+
+const Container = styled.section`
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 20px;
+`
+
+const TextButton = styled(Link)`
+  box-sizing: border-box;
+  display: block;
+  color: #e02020;
+  font-weight: 600;
+  margin: 0 auto 32px;
+  text-align: center;
+  text-decoration: none;
 `
