@@ -41,7 +41,8 @@ export default function App() {
           <EditRecipe
             headline="Rezept bearbeiten"
             recipes={recipes}
-            onSubmit={handleEditedRecipe}
+            onEdit={handleEditedRecipe}
+            onDelete={handleDeletedRecipe}
           />
         </Route>
       </Switch>
@@ -59,5 +60,10 @@ export default function App() {
       { ...recipes[index], ...editedRecipe },
       ...recipes.slice(index + 1),
     ])
+  }
+
+  function handleDeletedRecipe(deletedRecipe) {
+    const index = recipes.findIndex(recipe => recipe.id === deletedRecipe.id)
+    setRecipes([...recipes.slice(0, index), ...recipes.slice(index + 1)])
   }
 }
