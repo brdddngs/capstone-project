@@ -5,6 +5,7 @@ import Overview from './Overview.js'
 import FabButton from './FabButton.js'
 import NewRecipe from './NewRecipe.js'
 import EditRecipe from './EditRecipe.js'
+import OverviewEmpty from './OverviewEmpty.js'
 //import recipesData from './recipes.json'
 
 export default function App() {
@@ -22,7 +23,11 @@ export default function App() {
           <Link to="/create/newRecipe">
             <FabButton asset="add" />
           </Link>
-          <Overview recipes={recipes} headline="Cookbook" />
+          {recipes.length === 0 ? (
+            <OverviewEmpty headline="Cookbook" />
+          ) : (
+            <Overview recipes={recipes} headline="Cookbook" />
+          )}
         </Route>
 
         <Route path={`/detail/:id`} exact>
