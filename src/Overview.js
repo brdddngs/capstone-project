@@ -29,12 +29,10 @@ export default function Overview({ recipes, headline }) {
       </Header>
       <TileContainer>
         {recipesFiltered.map(recipe => (
-          <Tile key={recipe.id}>
-            <Link to={`/detail/${recipe.id}`}>
-              <Title>{recipe.title}</Title>
-              <Gradient />
-              <Image src={recipe.image === '' ? defaultImg : recipe.image} />
-            </Link>
+          <Tile key={recipe.id} to={`/detail/${recipe.id}`}>
+            <Title>{recipe.title}</Title>
+            <Gradient />
+            <Image src={recipe.image === '' ? defaultImg : recipe.image} />
           </Tile>
         ))}
       </TileContainer>
@@ -127,7 +125,6 @@ const TileContainer = styled.section`
   grid-template-rows: repeat(2, 160px);
   justify-content: center;
   gap: 12px;
-  background-color: #fff;
   &::after {
     content: '';
     height: 54px;
@@ -136,10 +133,8 @@ const TileContainer = styled.section`
   }
 `
 
-const Tile = styled.section`
+const Tile = styled(Link)`
   position: relative;
-  width: 160px;
-  height: 160px;
   background-color: rgb(226, 148, 19);
   &:last-of-type {
     margin-bottom: 20px;
@@ -164,7 +159,7 @@ const Title = styled.h2`
   bottom: 10px;
   padding: 0 10px;
   margin: 0;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: #f2f2f2;
 `
