@@ -1,32 +1,27 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components/macro'
 import Grid from './Grid'
-import bg from './assets/overview_empty/bg.PNG'
-import topf from './assets/overview_empty/topf_cut.png'
-import deckel from './assets/overview_empty/deckel_cut.png'
+import animationVideo from './assets/animation.MP4'
 
 export default function OverviewEmpty({ headline }) {
+  const vidoeEl = useRef()
+
+  function playVideo() {
+    vidoeEl.current.play()
+  }
+
   return (
     <Grid>
       <Header>
         <Headline>{headline}</Headline>
       </Header>
-      <Wrapper>
-        <ImageContainer>
-          <Cover src={deckel} alt=""></Cover>
-          <Pot src={topf} alt="" />
-          <Background src={bg} alt="" />
-        </ImageContainer>
-        <p
-          style={{
-            color: '#a5a5a5',
-            fontSize: '1.1rem',
-            margin: '24px 0px',
-            padding: '0 0 14px',
-          }}
-        >
-          Dein Kochbuch & Du
-        </p>
+      <Wrapper onClick={() => playVideo()}>
+        <Animation
+          ref={vidoeEl}
+          src={animationVideo}
+          type="video/mp4"
+        ></Animation>
+        <Text>Dein Kochbuch & Du</Text>
       </Wrapper>
     </Grid>
   )
@@ -67,25 +62,13 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 
-const ImageContainer = styled.div`
-  position: relative;
+const Animation = styled.video`
+  width: 100%;
 `
 
-const Background = styled.img`
-  width: 100%;
-  object-fit: cover;
-`
-const Pot = styled.img`
-  position: absolute;
-  height: 166px;
-  bottom: 26px;
-  left: 50%;
-  transform: translate(-50%);
-`
-const Cover = styled.img`
-  position: absolute;
-  width: 166px;
-  bottom: 180px;
-  left: 50%;
-  transform: translate(-52%);
+const Text = styled.p`
+  color: #a5a5a5;
+  font-size: 1.1rem;
+  margin: 24px 0px;
+  padding: 0 0 14px;
 `
