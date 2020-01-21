@@ -7,6 +7,25 @@
     "ingredients": [{ "ingredientItem": "Zutat", "amount": "300", "unit": "g" }]
   },
   {
+    "title": "Snüüsch",
+    "steps": "Das Gemüse so klein schneiden, dass alles in etwa die gleiche Garzeit hat. das Gemüse, Stängel der Petersilie und Lorbeerblätter in einen Topd geben. Mit so viel Wasser füllen, dass das Gemüse gerade bedeckt ist. Köcheln lassen bis das Gemüse al Dente ist. In der Zwischenzeit Vollkornbrot toasten und in kleine Würfel schneiden. In einem weiteren Topf die Butter schmelzen lassen. Wenn sie anfängt, Blasen zu werfen, das Mehl drüber streuen. Mit einem Schneebesen verrühren, sodass keine Klümpchen entstehen. Die Mehlschwitze anrösten, bis sie Farbe gezogen hat. Nun nach und nach Milch und Kochwasser hinzufügen, bis eine sämige Soße entstanden ist. Mit Salz, Pfeffer und Muskatnuss abschmecken. Das Gemüse zur Soße geben. Alles auf einem Teller anrichten, mit Vollkornbort und Petersielie bestreuen. Bon Appetit!",
+    "image": "https://res.cloudinary.com/dqhlhwdq7/image/upload/v1579094035/a3llrsjjur3mgn2pxwnz.jpg",
+    "id": "ko9z6f",
+    "ingredients": [
+      { "ingredientItem": "Kohlrabi", "amount": "1", "unit": "Stk" },
+      { "ingredientItem": "Kartoffeln", "amount": "150", "unit": "g" },
+      { "ingredientItem": "violette Möhre", "amount": "1", "unit": "Stk" },
+      { "ingredientItem": "gelbe Möhre", "amount": "1", "unit": "Stk" },
+      { "ingredientItem": "frische Erbsen", "amount": "100", "unit": "g" },
+      { "ingredientItem": "Petersilie", "amount": "1", "unit": "Bd" },
+      { "ingredientItem": "Vollkornbrot", "amount": "", "unit": "" },
+      { "ingredientItem": "Lorbeerblätter", "amount": "", "unit": "" },
+      { "ingredientItem": "Salz", "amount": "", "unit": "" },
+      { "ingredientItem": "Pfeffer", "amount": "", "unit": "" },
+      { "ingredientItem": "Muskatnuss", "amount": "", "unit": "" }
+    ]
+  },
+  {
     "title": "Pelmeni",
     "steps": "steps",
     "image": "http://res.cloudinary.com/dqhlhwdq7/image/upload/v1578317630/wp7bugjulwuttwsnir0b.jpg",

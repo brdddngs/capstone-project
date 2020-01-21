@@ -136,6 +136,8 @@ const TileContainer = styled.section`
 const Tile = styled(Link)`
   position: relative;
   background-color: rgb(226, 148, 19);
+  width: 160px;
+  height: 160px;
   &:last-of-type {
     margin-bottom: 20px;
   }
