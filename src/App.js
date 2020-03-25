@@ -5,11 +5,12 @@ import Overview from './Overview.js'
 import FabButton from './FabButton.js'
 import NewRecipe from './NewRecipe.js'
 import EditRecipe from './EditRecipe.js'
-//import recipesData from './recipes.json'
+import recipesData from './recipes.json'
 
 export default function App() {
   let recipesFromStorage = JSON.parse(localStorage.getItem('recipes'))
   const [recipes, setRecipes] = useState(recipesFromStorage || [])
+  // for test data please change useState from recipesFromStorage into recipesData, refresh the browser and restore the code
 
   useEffect(() => {
     localStorage.setItem('recipes', JSON.stringify(recipes))

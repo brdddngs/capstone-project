@@ -21,7 +21,7 @@ const Button = styled.span`
   background-color: rgba(226, 148, 19, 0.95);
 `
 const LinkStyled = styled.div`
-  z-index: 1;
+  z-index: 99;
   position: fixed;
   bottom: 10px;
   right: 10px;
